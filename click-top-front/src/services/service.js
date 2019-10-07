@@ -1,5 +1,5 @@
 import axios from 'axios';
-//import Interceptor from './inteceptors';
+import Interceptor from './inteceptors';
 export default class Service {
     constructor(url) {
 
@@ -8,7 +8,7 @@ export default class Service {
             timeout: 100000,
             headers: { 'Access-Control-Allow-Origin': '*' }
         });
-        //this._api.interceptors.response.use(...Interceptor.configure());
+        this._api.interceptors.response.use(...Interceptor.configure());
         this._url = '';
     }
 
