@@ -1,0 +1,82 @@
+@mixin background($background) {
+  background:                             url($background) no-repeat center center;
+  -webkit-background-size:                cover;
+  -moz-background-size:                   cover;
+  -o-background-size:                     cover;
+  background-size:                        cover;
+}
+
+@mixin background-paralax($background) {
+  background:                             url($background) no-repeat center center fixed;
+  -webkit-background-size:                cover;
+  -moz-background-size:                   cover;
+  -o-background-size:                     cover;
+  background-size:                        cover;
+}
+
+@mixin background-cont($background) {
+  background:                             url($background) no-repeat right;
+  -webkit-background-size:                contain;
+  -moz-background-size:                   contain;
+  -o-background-size:                     contain;
+  background-size:                        contain;
+}
+
+@mixin background-contl($background) {
+  background:                             url($background) no-repeat left;
+  -webkit-background-size:                contain;
+  -moz-background-size:                   contain;
+  -o-background-size:                     contain;
+  background-size:                        contain;
+}
+
+@mixin background-contc($background) {
+  background:                             url($background) no-repeat center;
+  -webkit-background-size:                contain;
+  -moz-background-size:                   contain;
+  -o-background-size:                     contain;
+  background-size:                        contain;
+}
+
+@mixin transition($transition) {
+  -webkit-transition:                     $transition;
+  -moz-transition:                        $transition;
+  -ms-transition:                         $transition;
+  -o-transition:                          $transition;
+  transition:                             $transition;
+}
+
+@mixin transform($transform) {
+  -webkit-transform:                     rotate($transform);
+  -moz-transform:                        rotate($transform);
+  -o-transform:                          rotate($transform);
+  transform:                             rotate($transform);
+  writing-mode:                          tb-rl;
+}
+
+@mixin scale($scale) {
+  -webkit-transform:                     scale($scale);
+  -moz-transform:                        scale($scale);
+  -o-transform:                          scale($scale);
+  transform:                             scale($scale);
+  // writing-mode:                          tb-rl;
+}
+
+@mixin box-shadow($box-shadow) {
+  -webkit-box-shadow:                     $box-shadow;
+  -moz-box-shadow:                        $box-shadow;
+  box-shadow:                             $box-shadow;
+}
+
+@mixin text-shadow($text-shadow) {
+  -webkit-text-shadow:                    $text-shadow;
+  text-shadow:                            $text-shadow;
+}
+
+@mixin border-radius($border-radius) {
+  -webkit-border-radius:                  $border-radius;
+  -moz-border-radius:                     $border-radius;
+  -ms-border-radius:                      $border-radius;
+  -o-border-radius:                       $border-radius;
+  border-radius:                          $border-radius;
+}
