@@ -1,16 +1,31 @@
 <template>
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>
+  <div class="container">
+    <div class="inline">
+      <a class="nav-link">
+        <img src="../assets/img/logo.png" alt="" width="100px">
+      </a>
+    </div>
+    <!-- justify-content-center -->
+    <ul class="nav inline">
+      <li class="nav-item">
+        <a class="nav-link active up" href="#">quem somos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link up" href="#">anuncie aqui</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link up" href="#">fale com a gente</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link up" href="#" tabindex="-1" aria-disabled="true">baixe nosso aplicativo</a>
+      </li>
+      <li class="float-right">
+        <a href="#">
+          Área do consultor
+          <i></i>
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
+<style scoped lang="scss" src="./app-header.scss"></style>

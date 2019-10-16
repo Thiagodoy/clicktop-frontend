@@ -20,7 +20,7 @@ body {
 
 a {
   @include                            transition(0.3s);
-  color:                              $gray;
+  // color:                              $gray;
   cursor:                             pointer;
   cursor:                             hand;
   // transition:                         0.3s;

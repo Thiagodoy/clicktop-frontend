@@ -9,6 +9,7 @@
   </div>
 </template>
 <script>
+import 'bootstrap';
 import AppHeader from './app-header.vue'
 import AppFooter from './app-footer.vue'
 
