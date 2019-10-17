@@ -1,0 +1,12 @@
+@import "../styles/global/_colors.scss";
+
+ul {
+  width:                        calc(100% - 140px);
+  text-align:                   center;
+  li {
+    display:                    inline-block;
+    a {
+      color:                    $dark-blue;
+    }
+  }
+}

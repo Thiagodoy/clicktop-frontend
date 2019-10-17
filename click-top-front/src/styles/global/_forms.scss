@@ -1,0 +1,12 @@
+.up {
+  text-transform:                        uppercase;
+}
+
+.form-control {
+  &.search {
+    color: white;
+    border: 0;
+    border-bottom: 1px solid white;
+    text-align: center;
+  }
+}
