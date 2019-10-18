@@ -13,7 +13,10 @@ Vue.use(Router)
 export default new Router({
   mode:'history',
   routes: [
-     { name: '/', path: 'inicio', component: Home, display: 'home' },    
+     { name: '/', path: 'inicio', component: Home, display: 'home' },
+     // { name: 'home', path: 'home', component: Home, display: 'home' },
+     { name: 'login', path: 'login', component: Login, display: 'login' },
+     { name: 'register', path: 'register', component: Register, display: 'register' },
   ]
 })
 
@@ -44,5 +47,3 @@ export default new Router({
 //   }, 3000);
 //   if (window.ga) window.ga('send', 'pageview', to.path);
 // });
-
-

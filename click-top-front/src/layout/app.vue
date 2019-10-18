@@ -2,7 +2,8 @@
   <div>
     <app-header></app-header>
     <section class="section">
-      <router-view></router-view>
+      <!-- <router-view></router-view> -->
+      <home></home>
     </section>
     <app-footer></app-footer>
     <!-- <message-dialog></message-dialog> -->
@@ -12,6 +13,7 @@
 import 'bootstrap';
 import AppHeader from './app-header.vue'
 import AppFooter from './app-footer.vue'
+import Home from '../pages/external/home.vue'
 
 export default {
   created(){
@@ -37,7 +39,7 @@ export default {
 
   },
   components: {
-      AppHeader, AppFooter
+      AppHeader, AppFooter, Home
   },
 
 }
