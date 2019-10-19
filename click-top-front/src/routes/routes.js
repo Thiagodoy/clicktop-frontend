@@ -10,12 +10,18 @@ import Register from '../pages/account/register.vue';
 
 Vue.use(Router)
 
+
+
+
 export default new Router({
   mode:'history',
   routes: [
-     { name: '/', path: 'inicio', component: Home, display: 'home' },    
+     { name: '/', path: 'inicio', component: Home, display: 'home' }, 
+      
+    
+    
   ]
-})
+});
 
 // export default new Router({
 //     mode: 'history',

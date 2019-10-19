@@ -2,7 +2,8 @@
   <div>
     <app-header></app-header>
     <section class="section">
-      <router-view></router-view>
+      <home></home>
+      
     </section>
     <app-footer></app-footer>
     <!-- <message-dialog></message-dialog> -->
@@ -10,8 +11,10 @@
 </template>
 <script>
 import 'bootstrap';
-import AppHeader from './app-header.vue'
-import AppFooter from './app-footer.vue'
+import AppHeader from './app-header.vue';
+import AppFooter from './app-footer.vue';
+import Home from '../pages/external/home.vue';
+
 
 export default {
   created(){
@@ -32,12 +35,18 @@ export default {
 
   },
   mounted(){
+
+
+     
+    console.log('APPP ROUTER',ro)
+    // router.push(router);
+  
     //$('body').append(document.getElementsByTagName('html')[0].classList.value);
     //$('body').append('<br>'+navigator.userAgent);
 
   },
   components: {
-      AppHeader, AppFooter
+      AppHeader, AppFooter,Home
   },
 
 }
