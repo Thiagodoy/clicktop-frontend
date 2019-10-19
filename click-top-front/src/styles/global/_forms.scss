@@ -4,9 +4,48 @@
 
 .form-control {
   &.search {
+    background: $dark-blue;
     color: white;
     border: 0;
     border-bottom: 1px solid white;
     text-align: center;
+    @include border-radius(0);
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+.search-box {
+  p, b {
+    color: white;
+  }
+}
+
+.short-menu {
+  li {
+    @include border-radius(5px);
+    text-align: center;
+    vertical-align: top;
+    width: 130px;
+    height: 130px;
+    background-color: #ccc;
+    color: $dark-blue;
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+    padding: 15px;
+    p {
+      line-height: 1.1;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:focus,
+    &:hover,
+    &.active {
+      background-color: $dark-blue;
+      color: white;
+    }
   }
 }

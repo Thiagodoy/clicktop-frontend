@@ -2,6 +2,19 @@
   display:                       inline-block;
 }
 
+.no-margin {
+  margin:                        0;
+}
+
+.margin-t10 {
+  margin-top:                    10px;
+}
+
+.margin-t20 {
+  margin-top:                    20px;
+}
+
 .search-box {
   background:                    $dark-blue;
+  height:                        80px;
 }

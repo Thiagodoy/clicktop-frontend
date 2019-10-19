@@ -7,9 +7,7 @@ import TokenService from '../services/token';
 
 
 
-import * as _ from "lodash"
 
-const moment = extendMoment(Moment);
 
 // TYPES
 const MAIN_LOGIN = 'MAIN_SET_LOGIN';

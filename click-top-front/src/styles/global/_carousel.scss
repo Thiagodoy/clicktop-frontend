@@ -1,0 +1,15 @@
+.carousel-indicators {
+  li {
+    width: 20px;
+    height: 20px;
+    @include border-radius(50%);
+    opacity: 1;
+    margin: 0 5px;
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      background-color: $dark-blue;
+    }
+  }
+}
