@@ -4,6 +4,7 @@
     <section class="section">
       <!-- <router-view></router-view> -->
       <home></home>
+      <!-- <register></register> -->
     </section>
     <app-footer></app-footer>
     <!-- <message-dialog></message-dialog> -->
@@ -14,6 +15,7 @@ import 'bootstrap';
 import AppHeader from './app-header.vue'
 import AppFooter from './app-footer.vue'
 import Home from '../pages/external/home.vue'
+import Register from '../pages/account/register.vue'
 
 export default {
   created(){
@@ -39,7 +41,7 @@ export default {
 
   },
   components: {
-      AppHeader, AppFooter, Home
+      AppHeader, AppFooter, Home, Register
   },
 
 }
