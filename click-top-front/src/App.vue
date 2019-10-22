@@ -1,15 +1,17 @@
 <template>
-  <div id="app">
-    
-  </div>
+  
 </template>
 
 <script>
 
+import router from './routes';
 
 export default {
-  name: 'app'
+  name: 'app',
  
+ 
+
+
 }
 </script>
 

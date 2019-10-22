@@ -1,21 +1,23 @@
 <template>
-  <div>
+  <div id="app" >
     <app-header></app-header>
     <section class="section">
       <!-- <router-view></router-view> -->
-      <home></home>
+      <!-- <home></home> -->
       <!-- <register></register> -->
+      <router-view></router-view>
     </section>
     <app-footer></app-footer>
-    <!-- <message-dialog></message-dialog> -->
   </div>
 </template>
 <script>
 import 'bootstrap';
+
 import AppHeader from './app-header.vue'
 import AppFooter from './app-footer.vue'
 import Home from '../pages/external/home.vue'
 import Register from '../pages/account/register.vue'
+
 
 export default {
   created(){
@@ -36,6 +38,12 @@ export default {
 
   },
   mounted(){
+
+
+
+
+    // router.push(router);
+
     //$('body').append(document.getElementsByTagName('html')[0].classList.value);
     //$('body').append('<br>'+navigator.userAgent);
 
