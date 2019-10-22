@@ -17,7 +17,8 @@ export default new Router({
   mode:'history',
   routes: [
 
-    { name: 'home', path: '/', component: Home, display: 'home' },
+    //{ name: 'home', path: '/', component: Home, display: 'home' },
+    { name: 'login', path: '/', component: Login, display: 'Login' },
 
     // { path: '/', component: App, redirect:'/inicio',
     //   children:[

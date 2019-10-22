@@ -19,3 +19,6 @@ class CompanyService {
 
 
 }
+
+const instance = new CompanyService(process.env.API_SERVICE_COMPANY);
+export default instance;
