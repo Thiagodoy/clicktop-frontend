@@ -28,15 +28,22 @@
     @include border-radius(5px);
     text-align: center;
     vertical-align: top;
-    width: 130px;
-    height: 130px;
+    // width: 134px;
+    width: 12%;
+    // height: 110px;
     background-color: #ccc;
     color: $dark-blue;
     display: inline-block;
     margin: 5px 5px 5px 0;
-    padding: 15px;
+    padding: 15px 15px 70px;
+    position: relative;
     p {
       line-height: 1.1;
+      margin: 0;
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      left: 15px;
     }
     &:last-child {
       margin-right: 0;
@@ -45,6 +52,24 @@
     &:hover,
     &.active {
       background-color: $dark-blue;
+      color: white;
+    }
+  }
+}
+
+.content-menu {
+  h3 {
+    background-color: $darkness-blue;
+    height: 60px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin: 0;
+    line-height: 2;
+  }
+  ul {
+    background-color: $dark-blue;
+    li {
       color: white;
     }
   }
