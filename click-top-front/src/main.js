@@ -9,6 +9,7 @@ import 'jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+// import 'mdbootstrap'
 import './styles/global/index.scss'
 
 Vue.config.productionTip = false
