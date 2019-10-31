@@ -36,22 +36,32 @@
               <div class="col-3">
                 <div class="form-group">
                   <label for="">Estado</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.state">
+                  <input class="form-control" type="text" name="" value="" v-model="company.address_neighborhood">
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <label for="">Localização geográfica</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.geo">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="">Latitude</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.latitude">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="">Longitude</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.longitude">
+                </div>
+              </div>
             </div>
             <div class="form-group">
               <label for="">E-mail para contato (orçamento)</label>
               <input class="form-control" type="text" name="" value="" v-model="company.email">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="">Site</label>
               <input class="form-control" type="text" name="" value="" v-model="company.site">
-            </div>
+            </div> -->
             <div class="row">
               <div class="col">
                 <div class="form-group">
@@ -60,39 +70,39 @@
                 </div>
               </div>
               <div class="col">
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="">Horário de funcionamento</label>
                   <input class="form-control" type="text" name="" value="" v-model="company.hour">
-                </div>
+                </div> -->
               </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="">Palavras chave para busca</label>
               <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.keyword"></textarea>
-            </div>
+            </div> -->
             <div class="form-group">
               <label for="">Missão, visão e valores</label>
-              <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.mission"></textarea>
+              <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.description"></textarea>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="">Principais produtos</label>
               <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.products"></textarea>
-            </div>
+            </div> -->
             <div class="form-group">
               <label for="">Facebook</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.face">
+              <input class="form-control" type="text" name="" value="" v-model="company.facebook">
             </div>
             <div class="form-group">
               <label for="">Instagram</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.insta">
+              <input class="form-control" type="text" name="" value="" v-model="company.instagran">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="">Link do Whats</label>
               <input class="form-control" type="text" name="" value="" v-model="company.whats">
-            </div>
+            </div> -->
             <div class="text-right">
               <button class="btn-danger" type="button" name="button">deletar</button>
-              <button class="btn-primary" type="button" name="button">salvar</button>
+              <button class="btn-primary" type="button" name="button" @click="saveCompany()">salvar</button>
             </div>
           </div>
         </div>
@@ -176,4 +186,4 @@
     </div>
   </div>
 </template>
-<script src="./register.js"></script>
+<script src="./register-company.js"></script>

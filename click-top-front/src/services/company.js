@@ -1,9 +1,10 @@
 import Service from './service'
+import axios from 'axios';
 
 class CompanyService {
-    constructor(url){
-        super(url)
-    }
+    // constructor(url){
+    //     super(url)
+    // }
 
     /**
      * @author  Thiago Godoy
@@ -11,11 +12,13 @@ class CompanyService {
      * @param {*} request
      * @memberof CompanyService
      */
-    save(request){
-
-        
-
+    saveCompany(request){
+      return axios.post(`/api/company`, request).then(resp =>{return resp;});
     }
 
 
 }
+
+const instance = new CompanyService();
+
+export default instance;
