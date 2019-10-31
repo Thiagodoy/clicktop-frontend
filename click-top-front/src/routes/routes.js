@@ -18,7 +18,7 @@ export default new Router({
   routes: [
 
     //{ name: 'home', path: '/', component: Home, display: 'home' },
-    { name: 'login', path: '/', component: Login, display: 'Login' },
+     { name: 'login', path: '/', component: Login, display: 'Login' },
 
     // { path: '/', component: App, redirect:'/inicio',
     //   children:[

@@ -1,12 +1,22 @@
 import axios from 'axios';
 import Interceptor from './inteceptors';
+import TokenService from './token';
 export default class Service {
     constructor(url) {
 
         this._api = axios.create({
             baseURL: `${process.env.VUE_APP_BASE_PATH}${url}`,
             timeout: 100000,
-            headers: { 'Access-Control-Allow-Origin': '*' }
+            headers: { 'Access-Control-Allow-Origin': '*' },
+            // transformRequest: [ (data, header) =>{ 
+            //     debugger;                
+            //     let token = TokenService.getToken();                
+            //     if(token){
+            //         header['Authorization'] = `${token}`; 
+            //     }
+
+            //     return JSON.stringify(data);
+            // }],
         });
         this._api.interceptors.response.use(...Interceptor.configure());
         this._url = '';
