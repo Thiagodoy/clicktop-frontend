@@ -23,7 +23,7 @@ class AuthenticationService extends Service{
 }
 
 
-console.info('process.env.API_SERVICE_AUTH',process.env.API_SERVICE_AUTH,'process.env', process.env);
+console.info('process.env.API_SERVICE_AUTH',process.env.VUE_APP_API_SERVICE_AUTH,'process.env', process.env);
 
 const instance = new AuthenticationService(process.env.VUE_APP_API_SERVICE_AUTH);
 export default instance;

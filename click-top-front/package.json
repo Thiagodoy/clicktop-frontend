@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service --mode dev serve",
+    "dev": "vue-cli-service serve --port 8080",    
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -14,8 +14,10 @@
     "bootstrap-vue": "^2.0.4",
     "core-js": "^2.6.5",
     "jquery": "^3.3.1",
+    "mdbootstrap": "^4.8.11",
     "node-sass": "^4.11.0",
     "popper.js": "^1.15.0",
+    "lodash": "^4.17.4",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",

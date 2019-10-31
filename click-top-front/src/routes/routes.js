@@ -5,7 +5,7 @@ import App from '../layout/app.vue';
 
 import Home from '../pages/external/home.vue';
 import Login from '../pages/auth/login.vue';
-import Register from '../pages/account/register.vue';
+import RegisterCompany from '../pages/account/register-company.vue';
 
 
 Vue.use(Router)
@@ -22,9 +22,9 @@ export default new Router({
 
     // { path: '/', component: App, redirect:'/inicio',
     //   children:[
-    //     { name: 'inicio', path: '/inicio', component: Home, display: 'home' },   
-    //   ] 
-    // }, 
+    //     { name: 'inicio', path: '/inicio', component: Home, display: 'home' },
+    //   ]
+    // },
 
     //  { name: '/', path: 'inicio', component: Home, display: 'home' },
     //  // { name: 'home', path: 'home', component: Home, display: 'home' },

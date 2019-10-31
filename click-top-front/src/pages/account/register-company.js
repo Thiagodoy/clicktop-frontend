@@ -1,3 +1,5 @@
+import CompanyService from '../../services/company';
+
 export default {
   data() {
     return {
@@ -18,7 +20,24 @@ export default {
         // face: undefined,
         // insta: undefined,
         // whats: undefined
-      }
+      },
+      loading: false
     }
   },
+  methods: {
+    saveCompany() {
+      console.log('oi');
+      debugger;
+      console.log('CompanyService',CompanyService);
+
+      CompanyService.saveCompany(this.company).then(resp => {
+        console.log('oioioioi');
+        // auth.updateLocalStorage();
+        console.log(resp, ' resp')
+      })
+      .catch(err =>
+        console.log(err, ' err')
+      )
+    },
+  }
 }

@@ -1,8 +1,9 @@
 import Service from './service'
 
-class CompanyService {
+
+class CompanyService extends Service {
     constructor(url){
-        super(url)
+        super(url);
     }
 
     /**
@@ -11,14 +12,12 @@ class CompanyService {
      * @param {*} request
      * @memberof CompanyService
      */
-    save(request){
-
-        
-
+    saveCompany(request){        
+      return this.post(request).then(resp =>{return resp;});
     }
 
 
 }
 
-const instance = new CompanyService(process.env.API_SERVICE_COMPANY);
+const instance = new CompanyService(process.env.VUE_APP_API_SERVICE_COMPANY);
 export default instance;

@@ -4,8 +4,8 @@
     <section class="section">
       <!-- <router-view></router-view> -->
       <!-- <home></home> -->
-      <!-- <register></register> -->
-      <router-view></router-view>
+      <register-company></register-company>
+      <!-- <router-view></router-view> -->
     </section>
     <app-footer></app-footer>
   </div>
@@ -16,7 +16,7 @@ import 'bootstrap';
 import AppHeader from './app-header.vue'
 import AppFooter from './app-footer.vue'
 import Home from '../pages/external/home.vue'
-import Register from '../pages/account/register.vue'
+import RegisterCompany from '../pages/account/register-company.vue'
 
 
 export default {
@@ -49,7 +49,7 @@ export default {
 
   },
   components: {
-      AppHeader, AppFooter, Home, Register
+      AppHeader, AppFooter, Home, RegisterCompany
   },
 
 }

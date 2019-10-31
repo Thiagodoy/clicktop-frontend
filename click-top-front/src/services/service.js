@@ -4,6 +4,8 @@ import TokenService from './token';
 export default class Service {
     constructor(url) {
 
+        console.log('base url', `${process.env.VUE_APP_BASE_PATH}${url}`);
+        
         this._api = axios.create({
             baseURL: `${process.env.VUE_APP_BASE_PATH}${url}`,
             timeout: 100000,
