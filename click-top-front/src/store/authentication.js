@@ -32,6 +32,7 @@ const userStore = {
     },
     actions: {
         actLogin({ commit, getters }, payload) {
+            debugger;
             return AuthService.auth(payload).then(response => {
                commit(MAIN_LOGIN, response); 
                console.log(response);

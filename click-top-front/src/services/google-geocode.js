@@ -22,8 +22,6 @@ class GoogleService extends Service {
                 throw new Error("Nenhuma referencia encontrada!");
             }
         });
-
-
     }
 
     putKey(request){

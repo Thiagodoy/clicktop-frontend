@@ -1,21 +1,46 @@
 <template>
   <div>
     <div class="container">
-      <form class="" action="index.html" method="post">
+      <form >
         <div class="row">
           <div class="col-12">
             <div class="form-group">
               <label for="">Usuário:</label>
-              <input class="form-control" type="text" name="" value="">
+              <input v-model="request.email" class="form-control" type="text" name="" value="">
             </div>
             <div class="form-group">
               <label for="">Senha:</label>
-              <input class="form-control" type="text" name="" value="">
+              <input v-model="request.password" class="form-control" type="text" name="" value="">
             </div>
-            <button class="btn-primary" type="button" name="button">Entrar</button>
+            <button class="btn-primary" type="button" name="button" @click="login">Entrar</button>
           </div>
         </div>
       </form>
     </div>
   </div>
 </template>
+<script>
+
+import {mapActions} from 'vuex';
+
+
+export default {
+
+  data(){
+    return{
+      request:{}
+    }
+  },
+  methods:{
+    ...mapActions(['actLogin']),
+    login(){
+
+      //:TODO Implementar validações
+
+      this.actLogin(this.request);
+
+
+    },
+  }
+}
+</script>

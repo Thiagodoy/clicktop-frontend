@@ -1,10 +1,10 @@
 import Service from './service'
-import axios from 'axios';
 
-class CompanyService {
-    // constructor(url){
-    //     super(url)
-    // }
+
+class CompanyService extends Service {
+    constructor(url){
+        super(url);
+    }
 
     /**
      * @author  Thiago Godoy
@@ -12,13 +12,12 @@ class CompanyService {
      * @param {*} request
      * @memberof CompanyService
      */
-    saveCompany(request){
-      return axios.post(`/api/company`, request).then(resp =>{return resp;});
+    saveCompany(request){        
+      return this.post(request).then(resp =>{return resp;});
     }
 
 
 }
 
-const instance = new CompanyService();
-
+const instance = new CompanyService(process.env.VUE_APP_API_SERVICE_COMPANY);
 export default instance;
