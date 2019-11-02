@@ -4,7 +4,8 @@
     <section class="section">
       <!-- <router-view></router-view> -->
       <!-- <home></home> -->
-      <register-company></register-company>
+      <register-user></register-user>
+      <!-- <register-company></register-company> -->
       <!-- <router-view></router-view> -->
     </section>
     <app-footer></app-footer>
@@ -17,6 +18,7 @@ import AppHeader from './app-header.vue'
 import AppFooter from './app-footer.vue'
 import Home from '../pages/external/home.vue'
 import RegisterCompany from '../pages/account/register-company.vue'
+import RegisterUser from '../pages/account/user/register-user.vue'
 
 
 export default {
@@ -49,7 +51,7 @@ export default {
 
   },
   components: {
-      AppHeader, AppFooter, Home, RegisterCompany
+      AppHeader, AppFooter, Home, RegisterCompany, RegisterUser
   },
 
 }

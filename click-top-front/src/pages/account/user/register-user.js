@@ -1,4 +1,4 @@
-import Company from '../../../services/user'
+import UserService from '../../../services/user'
 
 export default {
   data() {
@@ -25,9 +25,9 @@ export default {
     }
   },
   methods: {
-    saveCompany() {
+    saveUser() {
       console.log('oi');
-      Company.saveUser(this.company).then(resp => {
+      UserService.saveUser(this.company).then(resp => {
         console.log('oioioioi');
         // auth.updateLocalStorage();
         console.log(resp, ' resp')

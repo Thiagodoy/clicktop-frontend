@@ -1,6 +1,6 @@
 import Service from './service'
 
-class UserService {
+class UserService extends Service {
     constructor(url){
         super(url)
     }
@@ -9,14 +9,14 @@ class UserService {
      * @author  Thiago Godoy
      * @summary Save informations like Name, Address and other informations
      * @param {*} request
-     * @memberof CompanyService
+     * @memberof UserService
      */
-    save(request){
-      return axios
-        .post(`/api/user`, request).then(resp =>{
-          return resp;
-        });
+    saveUser(request){
+      return this.post(request).then(resp =>{return resp;});
     }
 
 
 }
+
+const instance = new UserService(process.env.VUE_APP_API_SERVICE_USER);
+export default instance;
