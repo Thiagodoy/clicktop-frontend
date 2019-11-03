@@ -11,11 +11,11 @@
                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
               </div>
             </div>
-            <div class="plains">
+            <!-- <div class="plains">
               <div class="">plano</div>
               <div class="">plano</div>
               <div class="">plano</div>
-            </div>
+            </div> -->
           </div>
           <div class="col-9">
             <div class="form-group">
@@ -27,30 +27,16 @@
               <input class="form-control" type="text" name="" value="" v-model="company.address">
             </div>
             <div class="row">
-              <div class="col-9">
+              <div class="col-6">
                 <div class="form-group">
                   <label for="">Cidade</label>
                   <input class="form-control" type="text" name="" value="" v-model="company.city">
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-6">
                 <div class="form-group">
-                  <label for="">Estado</label>
+                  <label for="">Bairro</label>
                   <input class="form-control" type="text" name="" value="" v-model="company.address_neighborhood">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <div class="form-group">
-                  <label for="">Latitude</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.latitude">
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="form-group">
-                  <label for="">Longitude</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.longitude">
                 </div>
               </div>
             </div>
@@ -70,24 +56,24 @@
                 </div>
               </div>
               <div class="col">
-                <!-- <div class="form-group">
+                <div class="form-group">
                   <label for="">Horário de funcionamento</label>
                   <input class="form-control" type="text" name="" value="" v-model="company.hour">
-                </div> -->
+                </div>
               </div>
             </div>
-            <!-- <div class="form-group">
+            <div class="form-group">
               <label for="">Palavras chave para busca</label>
               <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.keyword"></textarea>
-            </div> -->
+            </div>
             <div class="form-group">
               <label for="">Missão, visão e valores</label>
               <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.description"></textarea>
             </div>
-            <!-- <div class="form-group">
+            <div class="form-group">
               <label for="">Principais produtos</label>
               <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.products"></textarea>
-            </div> -->
+            </div>
             <div class="form-group">
               <label for="">Facebook</label>
               <input class="form-control" type="text" name="" value="" v-model="company.facebook">
@@ -96,10 +82,10 @@
               <label for="">Instagram</label>
               <input class="form-control" type="text" name="" value="" v-model="company.instagran">
             </div>
-            <!-- <div class="form-group">
+            <div class="form-group">
               <label for="">Link do Whats</label>
               <input class="form-control" type="text" name="" value="" v-model="company.whats">
-            </div> -->
+            </div>
             <div class="text-right">
               <button class="btn-danger" type="button" name="button">deletar</button>
               <button class="btn-primary" type="button" name="button" @click="saveCompany()">salvar</button>
@@ -107,9 +93,9 @@
           </div>
         </div>
 
-        <h1 class="up text-center">inserir destaque</h1>
+        <!-- <h1 class="up text-center">inserir destaque</h1> -->
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col">
             <div class="form-group">
               <div class="custom-file">
@@ -181,7 +167,7 @@
               <button class="btn-primary" type="button" name="button">salvar</button>
             </div>
           </div>
-        </div>
+        </div> -->
       </form>
     </div>
   </div>

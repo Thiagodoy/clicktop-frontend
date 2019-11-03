@@ -3,6 +3,7 @@ import Vue from 'vue'
 import App from './layout/app.vue'
 import BootstrapVue from 'bootstrap-vue'
 import Router from 'vue-router';
+import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
 import router from './routes/routes'
 import store from './store/index'
 import 'jquery'
@@ -15,6 +16,7 @@ import './styles/global/index.scss'
 Vue.config.productionTip = false
 
 Vue.use(BootstrapVue);
+Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead);
 
 
 new Vue({

@@ -4,8 +4,8 @@
     <section class="section">
       <!-- <router-view></router-view> -->
       <!-- <home></home> -->
-      <register-user></register-user>
-      <!-- <register-company></register-company> -->
+      <!-- <register-user></register-user> -->
+      <register-company></register-company>
       <!-- <router-view></router-view> -->
     </section>
     <app-footer></app-footer>
