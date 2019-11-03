@@ -11,9 +11,13 @@ class UserService extends Service {
      * @param {*} request
      * @memberof UserService
      */
-    saveUser(request){
-      return this.post(request).then(resp =>{return resp;});
-    }
+     saveUser(request){
+       return this.post(request).then(resp =>{return resp;});
+     }
+
+     saveImg(request){
+       return this.post(request).then(resp =>{return resp;});
+     }
 
 
 }

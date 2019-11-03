@@ -37,8 +37,8 @@ export default {
 
       //:TODO Implementar validações
 
+      this.$router.push({name: 'account/company/register-company'});
       this.actLogin(this.request);
-
 
     },
   }

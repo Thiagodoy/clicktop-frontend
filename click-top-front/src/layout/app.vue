@@ -5,8 +5,9 @@
       <!-- <router-view></router-view> -->
       <!-- <home></home> -->
       <!-- <register-user></register-user> -->
-      <register-company></register-company>
+      <!-- <register-company></register-company> -->
       <!-- <router-view></router-view> -->
+      <login></login>
     </section>
     <app-footer></app-footer>
   </div>
@@ -17,7 +18,8 @@ import 'bootstrap';
 import AppHeader from './app-header.vue'
 import AppFooter from './app-footer.vue'
 import Home from '../pages/external/home.vue'
-import RegisterCompany from '../pages/account/register-company.vue'
+import Login from '../pages/auth/login.vue'
+import RegisterCompany from '../pages/account/company/register-company.vue'
 import RegisterUser from '../pages/account/user/register-user.vue'
 
 
@@ -51,7 +53,7 @@ export default {
 
   },
   components: {
-      AppHeader, AppFooter, Home, RegisterCompany, RegisterUser
+      AppHeader, AppFooter, Home, RegisterCompany, RegisterUser, Login
   },
 
 }

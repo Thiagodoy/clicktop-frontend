@@ -1,4 +1,4 @@
-import CompanyService from '../../services/company';
+import CompanyService from '../../../services/company';
 
 export default {
   data() {
@@ -27,7 +27,7 @@ export default {
   methods: {
     saveCompany() {
       console.log('oi');
-      debugger;
+      // debugger;
       console.log('CompanyService',CompanyService);
 
       let img = new FormData();
@@ -41,7 +41,7 @@ export default {
             CompanyService.saveCover({'avatar': this.company.cover}).then(res => {
               console.log('resp avatar ', res);
             }).catch(err =>
-              console.log(err, ' err avatar');
+              console.log(err, ' err avatar')
             );
           }
       })

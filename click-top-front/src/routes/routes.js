@@ -5,7 +5,7 @@ import App from '../layout/app.vue';
 
 import Home from '../pages/external/home.vue';
 import Login from '../pages/auth/login.vue';
-import RegisterCompany from '../pages/account/register-company.vue';
+import RegisterCompany from '../pages/account/company/register-company.vue';
 
 
 Vue.use(Router)
