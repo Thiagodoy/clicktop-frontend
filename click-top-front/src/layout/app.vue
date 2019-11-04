@@ -5,9 +5,9 @@
       <!-- <router-view></router-view> -->
       <!-- <home></home> -->
       <!-- <register-user></register-user> -->
-      <!-- <register-company></register-company> -->
+      <register-company></register-company>
       <!-- <router-view></router-view> -->
-      <login></login>
+      <!-- <login></login> -->
     </section>
     <app-footer></app-footer>
   </div>

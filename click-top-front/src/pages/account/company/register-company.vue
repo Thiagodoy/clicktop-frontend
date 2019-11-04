@@ -1,175 +1,248 @@
 <template>
   <div>
+    <h1 class="up text-center title">cadastrar nova empresa</h1>
     <div class="container">
       <form class="" action="index.html" method="post">
-        <h1 class="up text-center">inserir empresa</h1>
         <div class="row">
-          <div class="col-3">
+          <div class="col">
             <div class="form-group">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-              </div>
-            </div>
-            <!-- <div class="plains">
-              <div class="">plano</div>
-              <div class="">plano</div>
-              <div class="">plano</div>
-            </div> -->
-          </div>
-          <div class="col-9">
-            <div class="form-group">
-              <label for="">Empresa</label>
+              <label for="">Nome da empresa (Nome Fantasia)</label>
               <input class="form-control" type="text" name="" value="" v-model="company.name">
             </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Telefone Fixo</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.phoneFix">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Telefone Comercial</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.phoneCommercial">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Telefone Celular (WhatsApp)</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.phoneWhats">
+                </div>
+              </div>
+            </div>
+
             <div class="form-group">
-              <label for="">Endereço</label>
+              <label for="">Endereço da empresa</label>
               <input class="form-control" type="text" name="" value="" v-model="company.address">
             </div>
+
             <div class="row">
-              <div class="col-6">
+              <div class="col-2">
                 <div class="form-group">
-                  <label for="">Cidade</label>
+                  <label for="">Número</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.number">
+                </div>
+              </div>
+
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="">Complemento</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.complement">
+                </div>
+              </div>
+
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="">CEP</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.zipCode">
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Cidade/Estado</label>
                   <input class="form-control" type="text" name="" value="" v-model="company.city">
                 </div>
               </div>
+            </div>
+
+            <div class="form-group">
+              <label for="">Missão/Visão/Valores - Resumo da empresa</label>
+              <small class="float-right">Máximo de 400 caractéres</small>
+              <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.mission"></textarea>
+            </div>
+
+            <div class="row">
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="">Horário de funcionamento</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.hourStart">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="">&nbsp;</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.hourEnd">
+                </div>
+              </div>
               <div class="col-6">
                 <div class="form-group">
-                  <label for="">Bairro</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.address_neighborhood">
+                  <label for="">Contato</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.email">
                 </div>
               </div>
             </div>
+
             <div class="form-group">
-              <label for="">E-mail para contato (orçamento)</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.email">
+              <label for="">Palavras Chave (Lembre-se de separar as palavras com vírgula)</label>
+              <input class="form-control" type="text" name="" value="" v-model="company.keyword">
             </div>
-            <!-- <div class="form-group">
-              <label for="">Site</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.site">
-            </div> -->
+
+            <div class="form-group">
+              <label for="">Produtos principais</label>
+              <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.products"></textarea>
+            </div>
+
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                  <label for="">Telefone</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.phone">
+                  <label for="">Website (Cole aqui a url)</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.site">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
-                  <label for="">Horário de funcionamento</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.hour">
+                  <label for="">Facebook (Cole aqui a url)</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.face">
                 </div>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="">Palavras chave para busca</label>
-              <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.keyword"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="">Missão, visão e valores</label>
-              <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.description"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="">Principais produtos</label>
-              <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.products"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="">Facebook</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.facebook">
-            </div>
-            <div class="form-group">
-              <label for="">Instagram</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.instagran">
-            </div>
-            <div class="form-group">
-              <label for="">Link do Whats</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.whats">
-            </div>
-            <div class="text-right">
-              <button class="btn-danger" type="button" name="button">deletar</button>
-              <button class="btn-primary" type="button" name="button" @click="saveCompany()">salvar</button>
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Instagram (Cole aqui a url)</label>
+                  <input class="form-control" type="text" name="" value="" v-model="company.insta">
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- <h1 class="up text-center">inserir destaque</h1> -->
 
-        <!-- <div class="row">
-          <div class="col">
-            <div class="form-group">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        <div class="company-box-img">
+          <div class="inline">
+            <div>
+              <img class="book-cover" src="../../../assets/img/perfilempresa.png"/>
+              <div class="upload-btn-wrapper text-center">
+                <input type="file" @change="onFileChange" >
               </div>
             </div>
-            <div class="form-group">
-              <p>período de anúncio</p>
-              <div class="">
-                <label for="">inicio:</label>
-                <input type="date" name="" value="">
-              </div>
-              <div class="">
-                <label for="">termino</label>
-                <input type="date" name="" value="">
+            <!-- <div v-else>
+              <img class="book-cover" v-bind:src="image" v-model="image"/>
+              <button class="btn btn-danger center upper" @click="removeImage">
+                <i class="icon-trash"></i>
+                Remover foto
+              </button>
+            </div> -->
+          </div>
+
+          <div class="inline float-right">
+            <div>
+              <img class="book-cover" src="../../../assets/img/capaempresa.png"/>
+              <div class="upload-btn-wrapper text-center">
+                <input type="file" @change="onFileChange" >
               </div>
             </div>
-            <div class="text-right">
-              <button class="btn-danger" type="button" name="button">deletar</button>
-              <button class="btn-primary" type="button" name="button">salvar</button>
+          </div>
+        </div>
+
+        <div class="product-box-img">
+          <div class="inline">
+            <div>
+              <img class="book-cover" src="../../../assets/img/produtoempresa.png"/>
+              <div class="upload-btn-wrapper text-center">
+                <input type="file" @change="onFileChange" >
+              </div>
             </div>
           </div>
 
-          <div class="col">
-            <div class="form-group">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          <div class="inline">
+            <div>
+              <img class="book-cover" src="../../../assets/img/produtoempresa.png"/>
+              <div class="upload-btn-wrapper text-center">
+                <input type="file" @change="onFileChange" >
               </div>
-            </div>
-            <div class="form-group">
-              <p>período de anúncio</p>
-              <div class="">
-                <label for="">inicio:</label>
-                <input type="date" name="" value="">
-              </div>
-              <div class="">
-                <label for="">termino</label>
-                <input type="date" name="" value="">
-              </div>
-            </div>
-            <div class="text-right">
-              <button class="btn-danger" type="button" name="button">deletar</button>
-              <button class="btn-primary" type="button" name="button">salvar</button>
             </div>
           </div>
 
-          <div class="col">
-            <div class="form-group">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          <div class="inline">
+            <div>
+              <img class="book-cover" src="../../../assets/img/produtoempresa.png"/>
+              <div class="upload-btn-wrapper text-center">
+                <input type="file" @change="onFileChange" >
               </div>
-            </div>
-            <div class="form-group">
-              <p>período de anúncio</p>
-              <div class="">
-                <label for="">inicio:</label>
-                <input type="date" name="" value="">
-              </div>
-              <div class="">
-                <label for="">termino</label>
-                <input type="date" name="" value="">
-              </div>
-            </div>
-            <div class="text-right">
-              <button class="btn-danger" type="button" name="button">deletar</button>
-              <button class="btn-primary" type="button" name="button">salvar</button>
             </div>
           </div>
-        </div> -->
+        </div>
+
+        <div class="row">
+          <div class="text-right col">
+            <button class="btn-danger" type="button" name="button">deletar</button>
+            <button class="btn-primary" type="button" name="button" @click="saveCompany()">salvar</button>
+          </div>
+        </div>
+
       </form>
     </div>
   </div>
 </template>
+<style scoped lang="scss">
+  .company-box-img {
+    img {
+      height: 280px;
+      width: auto;
+    }
+  }
+
+  .product-box-img {
+    img {
+      height: 280px;
+      width: auto;
+      margin-right: 25px;
+    }
+    .inline {
+      &:last-child {
+        img {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .book-cover {
+    display:                            block;
+    margin:                             10px auto;
+    /* height:                             302px; */
+    width:                              100%;
+  }
+  .upload-btn-wrapper {
+    position:                           relative;
+    overflow:                           hidden;
+    &:hover .btn-primary,
+    &:focus .btn-primary ,
+    &:visited .btn-primary,
+    &:active .btn-primary {
+      font-weight:                      bold;
+      background:                       white !important;
+      color:                            #4c7bb1 !important;
+      border:                           2px solid #4c7bb1;
+    }
+  }
+  .upload-btn-wrapper input[type=file] {
+    cursor:                             pointer;
+    position:                           absolute;
+    left:                               0;
+    top:                                0;
+    opacity:                            0;
+    height:                             100%;
+  }
+</style>
 <script src="./register-company.js"></script>
