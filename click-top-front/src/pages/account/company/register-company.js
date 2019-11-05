@@ -1,4 +1,5 @@
 import CompanyService from '../../../services/company';
+import InputImage from '../../../components/image/input-image.vue';
 
 export default {
   data() {
@@ -21,6 +22,11 @@ export default {
         // insta: undefined,
         // whats: undefined
       },
+      fileProfile: undefined,
+      fileCover: undefined,
+      fileProduct1: undefined,
+      fileProduct2: undefined,
+      fileProduct3: undefined,
       loading: false
     }
   },
@@ -49,5 +55,31 @@ export default {
         console.log(err, ' err')
       )
     },
-  }
+    onFileChange(e) {
+      console.log(e);
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length)
+      return;
+      this.createImage(files[0]);
+    },
+    createImage(file) {
+      console.log(file);
+      var image = new Image();
+      var reader = new FileReader();
+      var vm = this;
+
+      reader.onload = (e) => {
+        vm.image = e.target.result;
+        // this.upCover();
+      };
+      reader.readAsDataURL(file);
+      console.log(file);
+    },
+    removeImage: function (e) {
+      this.image = '';
+    }
+  },
+  components: {
+      InputImage
+  },
 }

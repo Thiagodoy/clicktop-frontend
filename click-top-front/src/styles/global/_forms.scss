@@ -102,3 +102,33 @@ h1 {
     }
   }
 }
+
+.company-box-img,
+.product-box-img {
+  input {
+    display: none;
+  }
+  img {
+    height: 280px;
+    width: auto;
+    cursor: pointer;
+    @include                            transition(.3s);
+    &:hover,
+    &:focus {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.product-box-img {
+  img {
+    margin-right: 25px;
+  }
+  .inline {
+    &:last-child {
+      img {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -127,67 +127,34 @@
         </div>
 
 
-        <div class="company-box-img">
-          <div class="inline">
-            <div>
-              <img class="book-cover" src="../../../assets/img/perfilempresa.png"/>
-              <div class="upload-btn-wrapper text-center">
-                <input type="file" @change="onFileChange" >
-              </div>
+        <div class="company-box-img margin-b20">
+          <input-image></input-image>
+
+          <div class="inline float-right">
+            <div v-if="!fileCover">
+              <label for="file-cover">
+                <img class="company-cover" src="../../../assets/img/capaempresa.png"/>
+              </label>
+              <!-- <div class="upload-btn-wrapper text-center"> -->
+                <input type="file" @change="onFileChange" id="file-cover">
+              <!-- </div> -->
             </div>
-            <!-- <div v-else>
-              <img class="book-cover" v-bind:src="image" v-model="image"/>
+            <div v-else>
+              <img class="company-cover" v-bind:src="image" v-model="fileCover"/>
               <button class="btn btn-danger center upper" @click="removeImage">
                 <i class="icon-trash"></i>
                 Remover foto
               </button>
-            </div> -->
-          </div>
-
-          <div class="inline float-right">
-            <div>
-              <img class="book-cover" src="../../../assets/img/capaempresa.png"/>
-              <div class="upload-btn-wrapper text-center">
-                <input type="file" @change="onFileChange" >
-              </div>
             </div>
           </div>
         </div>
 
         <div class="product-box-img">
-          <div class="inline">
-            <div>
-              <img class="book-cover" src="../../../assets/img/produtoempresa.png"/>
-              <div class="upload-btn-wrapper text-center">
-                <input type="file" @change="onFileChange" >
-              </div>
-            </div>
-          </div>
+          <input-image></input-image>
 
-          <div class="inline">
-            <div>
-              <img class="book-cover" src="../../../assets/img/produtoempresa.png"/>
-              <div class="upload-btn-wrapper text-center">
-                <input type="file" @change="onFileChange" >
-              </div>
-            </div>
-          </div>
+          <input-image></input-image>
 
-          <div class="inline">
-            <div>
-              <img class="book-cover" src="../../../assets/img/produtoempresa.png"/>
-              <div class="upload-btn-wrapper text-center">
-                <input type="file" @change="onFileChange" >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="text-right col">
-            <button class="btn-danger" type="button" name="button">deletar</button>
-            <button class="btn-primary" type="button" name="button" @click="saveCompany()">salvar</button>
-          </div>
+          <input-image></input-image>
         </div>
 
       </form>
@@ -195,35 +162,15 @@
   </div>
 </template>
 <style scoped lang="scss">
-  .company-box-img {
-    img {
-      height: 280px;
-      width: auto;
-    }
-  }
 
-  .product-box-img {
-    img {
-      height: 280px;
-      width: auto;
-      margin-right: 25px;
-    }
-    .inline {
-      &:last-child {
-        img {
-          margin-right: 0;
-        }
-      }
-    }
-  }
 
-  .book-cover {
+  .company-cover {
     display:                            block;
-    margin:                             10px auto;
-    /* height:                             302px; */
-    width:                              100%;
+    /* margin:                             10px auto; */
+    height:                             280px;
+    /* width:                              100%; */
   }
-  .upload-btn-wrapper {
+  /* .upload-btn-wrapper {
     position:                           relative;
     overflow:                           hidden;
     &:hover .btn-primary,
@@ -242,7 +189,7 @@
     left:                               0;
     top:                                0;
     opacity:                            0;
-    height:                             100%;
-  }
+    height:                             280px;
+  } */
 </style>
 <script src="./register-company.js"></script>
