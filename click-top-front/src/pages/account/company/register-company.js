@@ -1,5 +1,8 @@
 import CompanyService from '../../../services/company';
+import UtilsService from '../../../services/utils';
 import InputImage from '../../../components/image/input-image.vue';
+import InputImageLg from '../../../components/image/input-image-lg.vue';
+import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
 
 export default {
   data() {
@@ -80,6 +83,6 @@ export default {
     }
   },
   components: {
-      InputImage
+      InputImage, InputImageLg, VueBootstrapTypeahead
   },
 }
