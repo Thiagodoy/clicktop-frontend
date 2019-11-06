@@ -61,7 +61,8 @@
               <div class="col-4">
                 <div class="form-group">
                   <label for="">Cidade/Estado</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.city">
+                  <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
+                  <vue-bootstrap-typeahead :data="cities" v-model="company.city"></vue-bootstrap-typeahead>
                 </div>
               </div>
             </div>
