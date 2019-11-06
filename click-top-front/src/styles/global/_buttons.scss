@@ -1,0 +1,36 @@
+.btn {
+  padding: 20px 30px;
+  @include border-radius(45px);
+  border: 0;
+  outline: 0;
+}
+
+.btn-circle {
+  @include border-radius(50%);
+  border: 0;
+  outline: 0;
+  background-color: $light-grey;
+  color: grey;
+  font-size: 70px;
+  height: 130px;
+  width: 130px;
+}
+
+.btn-primary {
+  @extend .btn;
+  padding: 20px 80px;
+  background-color: $darkness-blue;
+  color: white;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $dark-blue;
+  }
+}
+
+.btn-default {
+  @extend .btn;
+  color: white;
+  background-color: $grey;
+}

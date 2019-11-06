@@ -61,7 +61,8 @@
               <div class="col-4">
                 <div class="form-group">
                   <label for="">Cidade/Estado</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.city">
+                  <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
+                  <vue-bootstrap-typeahead :data="cities" v-model="company.city"></vue-bootstrap-typeahead>
                 </div>
               </div>
             </div>
@@ -130,23 +131,7 @@
         <div class="company-box-img margin-b20">
           <input-image></input-image>
 
-          <div class="inline float-right">
-            <div v-if="!fileCover">
-              <label for="file-cover">
-                <img class="company-cover" src="../../../assets/img/capaempresa.png"/>
-              </label>
-              <!-- <div class="upload-btn-wrapper text-center"> -->
-                <input type="file" @change="onFileChange" id="file-cover">
-              <!-- </div> -->
-            </div>
-            <div v-else>
-              <img class="company-cover" v-bind:src="image" v-model="fileCover"/>
-              <button class="btn btn-danger center upper" @click="removeImage">
-                <i class="icon-trash"></i>
-                Remover foto
-              </button>
-            </div>
-          </div>
+          <input-image-lg class="float-right"></input-image-lg>
         </div>
 
         <div class="product-box-img">
@@ -155,14 +140,30 @@
           <input-image></input-image>
 
           <input-image></input-image>
+
+          <button class="btn-circle" type="button" name="button">+</button>
         </div>
 
+        <div class="text-right margin-20">
+          <button class="btn-default up" type="button" name="button">cancelar</button>
+          <button class="btn-primary up" type="button" name="button">salvar</button>
+        </div>
       </form>
     </div>
   </div>
 </template>
 <style scoped lang="scss">
+  .btn-circle {
+    margin: 0 20px;
+  }
 
+  .btn-default {
+    margin-right: 30px;
+  }
+
+  .btn-default, .btn-primary {
+    font-size: 36px;
+  }
 
   .company-cover {
     display:                            block;
