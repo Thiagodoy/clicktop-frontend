@@ -1,5 +1,6 @@
 /* eslint-disable */
 import Vue from 'vue'
+import VueValidate from 'vee-validate';
 import App from './layout/app.vue'
 import BootstrapVue from 'bootstrap-vue'
 import Router from 'vue-router';
@@ -16,6 +17,7 @@ import './styles/global/index.scss'
 Vue.config.productionTip = false
 
 Vue.use(BootstrapVue);
+Vue.use(VueValidate);
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead);
 
 

@@ -21,6 +21,7 @@ import Home from '../pages/external/home.vue'
 import Login from '../pages/auth/login.vue'
 import RegisterCompany from '../pages/account/company/register-company.vue'
 import RegisterUser from '../pages/account/user/register-user.vue'
+import {mapActions} from 'vuex'
 
 
 export default {
@@ -43,7 +44,7 @@ export default {
   },
   mounted(){
 
-
+    this.actLoadCities();
 
 
     // router.push(router);
@@ -51,6 +52,9 @@ export default {
     //$('body').append(document.getElementsByTagName('html')[0].classList.value);
     //$('body').append('<br>'+navigator.userAgent);
 
+  },
+  methods:{
+    ...mapActions(['actLoadCities'])
   },
   components: {
       AppHeader, AppFooter, Home, RegisterCompany, RegisterUser, Login

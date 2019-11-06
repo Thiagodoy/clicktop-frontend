@@ -7,54 +7,54 @@
           <div class="col">
             <div class="form-group">
               <label for="">Nome da empresa (Nome Fantasia)</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.name">
+              <input class="form-control" type="text" id="company-name" name="company-name" value="" v-model="company.name">
             </div>
 
             <div class="row">
               <div class="col">
                 <div class="form-group">
                   <label for="">Telefone Fixo</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.phoneFix">
+                  <input class="form-control" type="text" id="telephone" name="telephone" value="" v-model="telephone">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
                   <label for="">Telefone Comercial</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.phoneCommercial">
+                  <input class="form-control" type="text" id="telephone-comercial" name="telephone-comercial" value="" v-model="telephoneCommercial">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
                   <label for="">Telefone Celular (WhatsApp)</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.phoneWhats">
+                  <input class="form-control" type="text" id="cell-phone" name="cell-phone" value="" v-model="cellPhoneWhat">
                 </div>
               </div>
             </div>
 
             <div class="form-group">
               <label for="">Endereço da empresa</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.address">
+              <input class="form-control" type="text" id="address" name="address" value="" v-model="company.address">
             </div>
 
             <div class="row">
               <div class="col-2">
                 <div class="form-group">
                   <label for="">Número</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.number">
+                  <input class="form-control" type="text" id="address-number" name="address-number" value="" v-model="company.address_number">
                 </div>
               </div>
 
               <div class="col-3">
                 <div class="form-group">
                   <label for="">Complemento</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.complement">
+                  <input class="form-control" type="text" name="address-complement" value="" v-model="company.address_complement">
                 </div>
               </div>
 
               <div class="col-3">
                 <div class="form-group">
                   <label for="">CEP</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.zipCode">
+                  <input class="form-control" type="text" id="zip-code" name="zip-code" value="" v-model="company.zip_code">
                 </div>
               </div>
 
@@ -62,7 +62,7 @@
                 <div class="form-group">
                   <label for="">Cidade/Estado</label>
                   <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
-                  <vue-bootstrap-typeahead :data="cities" v-model="company.city"></vue-bootstrap-typeahead>
+                  <vue-bootstrap-typeahead id="city-state" name="city-state" :data="getCitiesMappeadWithState" v-model="company.city"></vue-bootstrap-typeahead>
                 </div>
               </div>
             </div>
@@ -70,57 +70,57 @@
             <div class="form-group">
               <label for="">Missão/Visão/Valores - Resumo da empresa</label>
               <small class="float-right">Máximo de 400 caractéres</small>
-              <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.mission"></textarea>
+              <textarea class="form-control" id="description" name="description" rows="3" cols="80" v-model="company.description"></textarea>
             </div>
 
             <div class="row">
               <div class="col-3">
                 <div class="form-group">
                   <label for="">Horário de funcionamento</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.hourStart">
+                  <input class="form-control" type="text" id="opening-hours" name="opening-hours" value="" v-model="company.opening_hours">
                 </div>
               </div>
               <div class="col-3">
                 <div class="form-group">
                   <label for="">&nbsp;</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.hourEnd">
+                  <input class="form-control" type="text" id="closing-hours" name="closing-hours" value="" v-model="company.closing_hours">
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group">
                   <label for="">Contato</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.email">
+                  <input class="form-control" type="text" id="email" name="email" value="" v-model="company.email">
                 </div>
               </div>
             </div>
 
             <div class="form-group">
               <label for="">Palavras Chave (Lembre-se de separar as palavras com vírgula)</label>
-              <input class="form-control" type="text" name="" value="" v-model="company.keyword">
+              <input class="form-control" type="text" id="keys" name="keys" value="" v-model="company.keys">
             </div>
 
             <div class="form-group">
               <label for="">Produtos principais</label>
-              <textarea class="form-control" name="name" rows="3" cols="80" v-model="company.products"></textarea>
+              <textarea class="form-control" id="main-products" name="main-products" rows="3" cols="80" v-model="company.main_products"></textarea>
             </div>
 
             <div class="row">
               <div class="col">
                 <div class="form-group">
                   <label for="">Website (Cole aqui a url)</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.site">
+                  <input class="form-control" type="text" id="website" name="website" value="" v-model="company.website">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
                   <label for="">Facebook (Cole aqui a url)</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.face">
+                  <input class="form-control" type="text" id="facebook" name="facebook" value="" v-model="company.facebook">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
                   <label for="">Instagram (Cole aqui a url)</label>
-                  <input class="form-control" type="text" name="" value="" v-model="company.insta">
+                  <input class="form-control" type="text" id="instagran" name="instagran" value="" v-model="company.instagran">
                 </div>
               </div>
             </div>
@@ -146,7 +146,7 @@
 
         <div class="text-right margin-20">
           <button class="btn-default up" type="button" name="button">cancelar</button>
-          <button class="btn-primary up" type="button" name="button">salvar</button>
+          <button class="btn-primary up" @click="saveCompany()" type="button" name="button">salvar</button>
         </div>
       </form>
     </div>
