@@ -24,10 +24,12 @@ const cityStore = {
             return state.citiesMappeadWithState ? state.citiesMappeadWithState : [];
         },        
 
-        getCityId: (state, getters) =>(payload)=> {
+        getCityId: (state,getters) => (name) => {
 
-            let name_city = payload.split('/')[0].trim();
-            let state = payload.split('/')[1].trim();
+            console.log(state,getters);
+            debugger;
+            let name_city = name.split('/')[0].trim();
+            let state = name.split('/')[1].trim();
 
             return state.cities.find(c=> c.name_city == name_city && c.state.initials == state);
         }, 

@@ -1,6 +1,7 @@
 import CompanyService from '../../../services/company';
 //import UtilsService from '../../../services/city';
-import InputImage from '../../../components/image/input-image.vue';
+import InputImageProduct from '../../../components/image/input-image-product.vue';
+import InputImageProfile from '../../../components/image/input-image-profile.vue';
 import InputImageLg from '../../../components/image/input-image-lg.vue';
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
 import {mapGetters,mapActions} from 'vuex'
@@ -11,71 +12,160 @@ export default {
       company: {
         telephones:[]
       },
+      products:[],
       cities: [],
-      loading: false
+      loading: false,
+      profile:undefined,
+      cover:undefined
     }
   },
   mounted() {
 
   },
   methods: {
+
+    removeCover(){
+      this.cover = undefined;
+    },
+    setCover(image){
+      this.cover = {image, type:'COVER-COMPANY'};
+    }, 
+
+    removeProfile(){
+      this.profile = undefined;
+    },
+    setProfile(image){
+      this.profile = {image:image.image, type:'PROFILE-COMPANY'};
+    },   
+
+    addImage(){
+      this.products.push({});
+    },
+    removeProduct(){
+      for(let i = 0; i < this.products.length; i++){
+        if(i == image.index){
+          this.products[i] = {};
+          break;
+        }
+      }
+    },
+    addProduct(image){
+      
+      for(let i = 0; i < this.products.length; i++){
+        if(i == image.index){
+          this.products[i] = {image:image.image, type:'PRODUCT'};
+          break;
+        }
+      }
+      
+    },
     saveCompany() {
 
       this.$validator.validateAll().then(response=>{
-        console.log('validado', response);
+        
+        let galery = new Array(this.products);
+
+         if(this.profile){
+          galery.push(this.profile);
+         } 
+
+         if(this.cover){
+          galery.push(this.cover);
+         }
+
+         if(galery.length > 0){
+           this.company.galery = galery;
+         }
+
+         if(this.company.telephones.length == 0){
+           delete this.company.telephones;
+         }
+
+         this.company.user = {
+          name:this.company.name,
+          email: this.company.email,
+          password:"clicktop2020"
+         };
+
+         console.log('getCityId', this.getCityId(this.company.id_city));
+
+
+         return;
+
+         CompanyService.saveCompany(this.company).then(()=>{
+           alert("Empresa salva com sucesso!");
+         }).then((e)=>{
+           console.error(e);
+           alert('Erro ao salvar!');
+         })
+         
+
+
       }).catch(erro=>{
         console.log('error');
       })
-
-
-
     },
   },
   computed:{
-    ...mapGetters(['getCitiesMappeadWithState']),
+    ...mapGetters(['getCitiesMappeadWithState','getCityId']),
     telephone:{
       set: function(value){
 
-        let tel = this.company.telephones.find(t=> t.type == 'TELEPHONE'); 
+        const tel = this.company.telephones.find(t=> t.type == 'TELEPHONE'); 
         
         if(!tel){
           this.company.telephones.push({number:value, type:"TELEPHONE"});
         }else{
-          tel.value = value;
+          tel.number = value;
+        }
+
+        if(value.length == 0){          
+          let index = this.company.telephones.indexOf(tel);
+          this.company.telephones.splice(index,1);
         }
           
       },
       get:function(){
         let tel = this.company.telephones.find(t=> t.type == 'TELEPHONE'); 
-        return tel ? tel.value : '';
+        return tel ? tel.number : '';
       }
     },
     telephoneCommercial:{
       set: function(value){
 
-        let tel = this.company.telephones.find(t=> t.type == 'COMMERCIAL'); 
+        const tel = this.company.telephones.find(t=> t.type == 'COMMERCIAL'); 
         
         if(!tel){
           this.company.telephones.push({number:value, type:"COMMERCIAL"});
         }else{
-          tel.value = value;
+          tel.number = value;
+        }     
+        
+        if(value.length == 0){          
+          let index = this.company.telephones.indexOf(tel);
+          this.company.telephones.splice(index,1);
         }
        
       },
       get:function(){
         let tel = this.company.telephones.find(t=> t.type == 'COMMERCIAL'); 
-        return tel ? tel.value : '';
+        return tel ? tel.number : '';
       }
     },
     cellPhoneWhat:{
       set:function(value){
 
-        let tel = this.company.telephones.find(t=> t.type == 'WHATSAPP'); 
+        const tel = this.company.telephones.find(t=> t.type == 'WHATSAPP'); 
         
         if(!tel){
           this.company.telephones.push({number:value, type:"WHATSAPP"});
         }else{
-          tel.value = value;
+          tel.number = value;
+        }
+
+        if(value.length == 0){          
+          let index = this.company.telephones.indexOf(tel);
+          this.company.telephones.splice(index,1);
         }
        
       },
@@ -86,6 +176,9 @@ export default {
     }
   },
   components: {
-      InputImage, InputImageLg, VueBootstrapTypeahead
+      InputImageProduct,
+      InputImageProfile,
+      InputImageLg, 
+      VueBootstrapTypeahead
   },
 }

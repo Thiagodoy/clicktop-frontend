@@ -129,19 +129,17 @@
 
 
         <div class="company-box-img margin-b20">
-          <input-image></input-image>
-
-          <input-image-lg class="float-right"></input-image-lg>
+          <input-image-profile @add="setProfile" @remove="removeProfile"></input-image-profile>
+          <input-image-lg @add="setCover" @remove="removeCover" class="float-right"></input-image-lg>
         </div>
 
         <div class="product-box-img">
-          <input-image></input-image>
+          <template v-for="(v,i) in products">
+              <input-image-product :key="i" :index="i" @add="addProduct" @remove="removeProduct"></input-image-product>
+          </template>        
+          
 
-          <input-image></input-image>
-
-          <input-image></input-image>
-
-          <button class="btn-circle" type="button" name="button">+</button>
+          <button class="btn-circle" @click="addImage()" type="button" name="button">+</button>
         </div>
 
         <div class="text-right margin-20">
