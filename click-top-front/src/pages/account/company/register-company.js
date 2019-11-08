@@ -3,8 +3,10 @@ import CompanyService from '../../../services/company';
 import InputImageProduct from '../../../components/image/input-image-product.vue';
 import InputImageProfile from '../../../components/image/input-image-profile.vue';
 import InputImageLg from '../../../components/image/input-image-lg.vue';
+// import {mask} from 'vue-the-mask'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
 import {mapGetters,mapActions} from 'vuex'
+
 
 export default {
   data() {
@@ -29,14 +31,14 @@ export default {
     },
     setCover(image){
       this.cover = {image, type:'COVER-COMPANY'};
-    }, 
+    },
 
     removeProfile(){
       this.profile = undefined;
     },
     setProfile(image){
       this.profile = {image:image.image, type:'PROFILE-COMPANY'};
-    },   
+    },
 
     addImage(){
       this.products.push({});
@@ -50,24 +52,24 @@ export default {
       }
     },
     addProduct(image){
-      
+
       for(let i = 0; i < this.products.length; i++){
         if(i == image.index){
           this.products[i] = {image:image.image, type:'PRODUCT'};
           break;
         }
       }
-      
+
     },
     saveCompany() {
 
       this.$validator.validateAll().then(response=>{
-        
+
         let galery = new Array(this.products);
 
          if(this.profile){
           galery.push(this.profile);
-         } 
+         }
 
          if(this.cover){
           galery.push(this.cover);
@@ -105,7 +107,7 @@ debugger;
            console.error(e);
            alert('Erro ao salvar!');
          })
-         
+
 
 
       }).catch(erro=>{
@@ -118,66 +120,66 @@ debugger;
     telephone:{
       set: function(value){
 
-        const tel = this.company.telephones.find(t=> t.type == 'TELEPHONE'); 
-        
+        const tel = this.company.telephones.find(t=> t.type == 'TELEPHONE');
+
         if(!tel){
           this.company.telephones.push({number:value, type:"TELEPHONE"});
         }else{
           tel.number = value;
         }
 
-        if(value.length == 0){          
+        if(value.length == 0){
           let index = this.company.telephones.indexOf(tel);
           this.company.telephones.splice(index,1);
         }
-          
+
       },
       get:function(){
-        let tel = this.company.telephones.find(t=> t.type == 'TELEPHONE'); 
+        let tel = this.company.telephones.find(t=> t.type == 'TELEPHONE');
         return tel ? tel.number : '';
       }
     },
     telephoneCommercial:{
       set: function(value){
 
-        const tel = this.company.telephones.find(t=> t.type == 'COMMERCIAL'); 
-        
+        const tel = this.company.telephones.find(t=> t.type == 'COMMERCIAL');
+
         if(!tel){
           this.company.telephones.push({number:value, type:"COMMERCIAL"});
         }else{
           tel.number = value;
-        }     
-        
-        if(value.length == 0){          
+        }
+
+        if(value.length == 0){
           let index = this.company.telephones.indexOf(tel);
           this.company.telephones.splice(index,1);
         }
-       
+
       },
       get:function(){
-        let tel = this.company.telephones.find(t=> t.type == 'COMMERCIAL'); 
+        let tel = this.company.telephones.find(t=> t.type == 'COMMERCIAL');
         return tel ? tel.number : '';
       }
     },
     cellPhoneWhat:{
       set:function(value){
 
-        const tel = this.company.telephones.find(t=> t.type == 'WHATSAPP'); 
-        
+        const tel = this.company.telephones.find(t=> t.type == 'WHATSAPP');
+
         if(!tel){
           this.company.telephones.push({number:value, type:"WHATSAPP"});
         }else{
           tel.number = value;
         }
 
-        if(value.length == 0){          
+        if(value.length == 0){
           let index = this.company.telephones.indexOf(tel);
           this.company.telephones.splice(index,1);
         }
-       
+
       },
       get:function(){
-        let tel = this.company.telephones.find(t=> t.type == 'COMMERCIAL'); 
+        let tel = this.company.telephones.find(t=> t.type == 'COMMERCIAL');
         return tel ? tel.value : '';
       }
     }
@@ -185,7 +187,7 @@ debugger;
   components: {
       InputImageProduct,
       InputImageProfile,
-      InputImageLg, 
+      InputImageLg,
       VueBootstrapTypeahead
   },
 }

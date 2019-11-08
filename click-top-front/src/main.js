@@ -6,6 +6,7 @@ import BootstrapVue from 'bootstrap-vue'
 import Router from 'vue-router';
 import VueSession from 'vue-session';
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
+import VueTheMask from 'vue-the-mask'
 import router from './routes/routes'
 import store from './store/index'
 import 'jquery'
@@ -19,7 +20,10 @@ Vue.config.productionTip = false
 
 Vue.use(BootstrapVue);
 Vue.use(VueValidate);
+
 Vue.use(VueSession);
+Vue.use(VueTheMask);
+
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead);
 
 
