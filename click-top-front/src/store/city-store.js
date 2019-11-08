@@ -20,18 +20,23 @@ const cityStore = {
        
     },
     getters: {        
+        getCities: (state, getters) => {
+            return state.cities ? state.cities : [];
+        },        
+
         getCitiesMappeadWithState: (state, getters) => {
             return state.citiesMappeadWithState ? state.citiesMappeadWithState : [];
         },        
 
-        getCityId: (state,getters) => (name) => {
+        getCityId: (state) => (id) => {
 
-            console.log(state,getters);
-            debugger;
-            let name_city = name.split('/')[0].trim();
-            let state = name.split('/')[1].trim();
+            console.log('arg', arguments, id);
+            return 'getCityId';
+            // debugger;
+            // let name_city = name.split('/')[0].trim();
+            // let state = name.split('/')[1].trim();
 
-            return state.cities.find(c=> c.name_city == name_city && c.state.initials == state);
+            // return state.cities.find(c=> c.name_city == name_city && c.state.initials == state);
         }, 
     },
     actions: {

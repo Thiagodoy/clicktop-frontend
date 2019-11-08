@@ -229,5 +229,6 @@
 <script>
 export default {
 
+ 
 }
 </script>

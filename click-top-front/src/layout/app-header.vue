@@ -2,7 +2,7 @@
   <div class="container">
     <div class="inline">
       <a class="nav-link">
-        <img src="../assets/img/logo.png" alt="" width="100px">
+        <img src="../assets/img/logo.png" @click="toHome()" alt="" width="100px">
       </a>
     </div>
     <!-- justify-content-center -->
@@ -20,7 +20,7 @@
         <a class="nav-link up" href="#" tabindex="-1" aria-disabled="true">baixe nosso aplicativo</a>
       </li>
       <li class="float-right">
-        <a href="#">
+        <a @click="toLogin()">
           Área do consultor
           <i></i>
         </a>
@@ -29,3 +29,15 @@
   </div>
 </template>
 <style scoped lang="scss" src="./app-header.scss"></style>
+<script>
+export default {
+   methods:{
+    toLogin(){
+      this.$router.push({name:'login'});
+    },
+    toHome(){
+      this.$router.push({name:'home'});
+    }
+  }
+}
+</script>

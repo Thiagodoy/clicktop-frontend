@@ -1,6 +1,6 @@
 import AuthService from '../services/authentication';
 import TokenService from '../services/token';
-
+import {instance} from '../main';
 
 
 
@@ -21,7 +21,7 @@ const userStore = {
         [MAIN_LOGIN](state, obj) {
            
             state.user = obj;
-            sessionStorage.setItem('user', JSON.stringify(state.user));
+            //sessionStorage.setItem('user', JSON.stringify(state.user));
         },
        
     },
@@ -31,11 +31,15 @@ const userStore = {
         },        
     },
     actions: {
-        actLogin({ commit, getters }, payload) {
-            debugger;
+        actLogin({ commit, getters }, payload) {            
             return AuthService.auth(payload).then(response => {
-               commit(MAIN_LOGIN, response); 
-               console.log(response);
+                debugger;
+               commit(MAIN_LOGIN, response);
+               console.log(instance);
+               instance.$session.set('user', response);
+               return Promise.resolve(true);               
+            }).catch((error)=>{
+                return Promise.resolve(false)
             });
         },        
     }

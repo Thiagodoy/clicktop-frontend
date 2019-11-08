@@ -87,6 +87,13 @@ export default {
           password:"clicktop2020"
          };
 
+
+           let name_city = this.company.id_city.split('/')[0].trim();
+           let state = this.company.id_city.split('/')[1].trim();
+debugger; 
+           console.log('city', this.getCities.cities.find(c=> c.name_city == name_city && c.state.initials == state));
+
+         console.log('store', this.$store.getters.getCityId(this.company.id_city));
          console.log('getCityId', this.getCityId(this.company.id_city));
 
 
@@ -102,12 +109,12 @@ export default {
 
 
       }).catch(erro=>{
-        console.log('error');
+        console.log('error', erro);
       })
     },
   },
   computed:{
-    ...mapGetters(['getCitiesMappeadWithState','getCityId']),
+    ...mapGetters(['getCitiesMappeadWithState','getCityId','getCities']),
     telephone:{
       set: function(value){
 

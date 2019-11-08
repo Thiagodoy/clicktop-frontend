@@ -4,8 +4,10 @@ import Router from 'vue-router';
 import App from '../layout/app.vue';
 
 import Home from '../pages/external/home.vue';
+import Internal from '../pages/internal/internal.vue';
 import Login from '../pages/auth/login.vue';
 import RegisterCompany from '../pages/account/company/register-company.vue';
+import RouterGuard from '../routes/router-guard';
 
 
 Vue.use(Router)
@@ -17,8 +19,15 @@ export default new Router({
   mode:'history',
   routes: [
 
-    //{ name: 'home', path: '/', component: Home, display: 'home' },
-     { name: 'login', path: '/', component: Login, display: 'Login' },
+     { name: 'home', path: '/', component: Home, display: 'home' },
+     { name: 'login', path: '/login', component: Login, display: 'login' },
+     { name: 'internal', path: '/internal', component: Internal, display: 'internal', 
+       beforeEnter: RouterGuard.checkUserIsLogged.bind(RouterGuard), 
+       children: [
+        { name: 'company', path: '/company', component: RegisterCompany, display: 'company'}
+       ]
+    },
+
 
     // { path: '/', component: App, redirect:'/inicio',
     //   children:[

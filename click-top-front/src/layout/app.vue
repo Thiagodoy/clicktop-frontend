@@ -5,8 +5,8 @@
       <!-- <router-view></router-view> -->
       <!-- <home></home> -->
       <!-- <register-user></register-user> -->
-      <register-company></register-company>
-      <!-- <router-view></router-view> -->
+      <!-- <register-company></register-company> -->
+      <router-view></router-view>
       <!-- <login></login> -->
     </section>
     <app-footer></app-footer>
@@ -44,6 +44,7 @@ export default {
   },
   mounted(){
 
+    //Cria cache da cidades
     this.actLoadCities();
 
 

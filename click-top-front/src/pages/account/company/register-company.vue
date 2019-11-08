@@ -62,7 +62,7 @@
                 <div class="form-group">
                   <label for="">Cidade/Estado</label>
                   <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
-                  <vue-bootstrap-typeahead id="city-state" name="city-state" :data="getCitiesMappeadWithState" v-model="company.city"></vue-bootstrap-typeahead>
+                  <vue-bootstrap-typeahead id="city-state" name="city-state" :data="getCitiesMappeadWithState" v-model="company.id_city"></vue-bootstrap-typeahead>
                 </div>
               </div>
             </div>
