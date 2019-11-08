@@ -4,12 +4,15 @@
       <label for="file-cover">
         <img class="company-cover" src="../../assets/img/capaempresa.png"/>
       </label>
-      
+
       <input type="file" @change="onFileChange" id="file-cover">
-      
+
     </div>
     <div v-else>
       <img class="company-cover" v-bind:src="image"/>
+      <button type="button" class="close" aria-label="Close" @click="removeImage">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <!-- <button class="btn btn-danger center upper" @click="removeImage">
         <i class="icon-trash"></i>
         Remover foto
@@ -17,6 +20,11 @@
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+  .close {
+    font-size: 2em;
+  }
+</style>
 <script>
 
 export default {
@@ -27,24 +35,24 @@ export default {
   },
   methods: {
     onFileChange(e) {
-      
+
       var files = e.target.files || e.dataTransfer.files;
 
       if (!files.length) return;
 
       this.createImage(files[0]);
     },
-    createImage(file) {     
-      
-      var reader = new FileReader();     
+    createImage(file) {
+
+      var reader = new FileReader();
 
       reader.onload = (e) => {
         this.image = e.target.result;
         this.$emit('add', this.image);
-        
+
       };
       reader.readAsDataURL(file);
-      
+
     },
     removeImage: function (e) {
       this.image = '';

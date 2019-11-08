@@ -10,6 +10,9 @@
     </div>
     <div v-else>
       <img class="company-cover" v-bind:src="image" />
+      <button type="button" class="close" aria-label="Close" @click="removeImage">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <!-- <button class="btn btn-danger center upper" @click="removeImage">
         <i class="icon-trash"></i>
         Remover foto
@@ -17,6 +20,11 @@
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+  .close {
+    font-size: 2em;
+  }
+</style>
 <script >
 export default {
   props:['index', 'type'],
@@ -34,17 +42,17 @@ export default {
       this.createImage(files[0]);
     },
     createImage(file) {
-            
-      var reader = new FileReader();     
+
+      var reader = new FileReader();
 
       reader.onload = (e) => {
       this.image = e.target.result;
         this.$emit('add',{index:this.index, image:this.image});
       };
 
-      reader.readAsDataURL(file);      
+      reader.readAsDataURL(file);
     },
-    removeImage: function (e) {      
+    removeImage: function (e) {
       this.image = '';
       this.$emit('remove');
     }

@@ -7,40 +7,49 @@
           <div class="col">
             <div class="form-group">
               <label for="">Nome da empresa (Nome Fantasia)</label>
-              <input class="form-control" type="text" id="company-name" name="company-name" value="" v-model="company.name">
+              <input class="form-control" type="text" id="company-name" name="company-name" value="" v-model="company.name" v-validate="'required'">
+              <div class="help-block">
+                {{ errors.first('company-name') }}
+              </div>
             </div>
 
             <div class="row">
               <div class="col">
                 <div class="form-group">
                   <label for="">Telefone Fixo</label>
-                  <input class="form-control" type="text" id="telephone" name="telephone" value="" v-model="telephone">
+                  <input class="form-control" type="text" id="telephone" name="telephone" value="" v-model="telephone" v-mask="'(##) ####-####'">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
                   <label for="">Telefone Comercial</label>
-                  <input class="form-control" type="text" id="telephone-comercial" name="telephone-comercial" value="" v-model="telephoneCommercial">
+                  <input class="form-control" type="text" id="telephone-comercial" name="telephone-comercial" value="" v-model="telephoneCommercial" v-mask="'(##) ####-####'">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
                   <label for="">Telefone Celular (WhatsApp)</label>
-                  <input class="form-control" type="text" id="cell-phone" name="cell-phone" value="" v-model="cellPhoneWhat">
+                  <input class="form-control" type="text" id="cell-phone" name="cell-phone" value="" v-model="cellPhoneWhat" v-mask="'(##) #####-####'">
                 </div>
               </div>
             </div>
 
             <div class="form-group">
               <label for="">Endereço da empresa</label>
-              <input class="form-control" type="text" id="address" name="address" value="" v-model="company.address">
+              <input class="form-control" type="text" id="address" name="address" value="" v-model="company.address" v-validate="'required'">
+              <div class="help-block">
+                {{ errors.first('address') }}
+              </div>
             </div>
 
             <div class="row">
               <div class="col-2">
                 <div class="form-group">
                   <label for="">Número</label>
-                  <input class="form-control" type="text" id="address-number" name="address-number" value="" v-model="company.address_number">
+                  <input class="form-control" type="text" id="address-number" name="address-number" value="" v-model="company.address_number" v-validate="'required'">
+                  <div class="help-block">
+                    {{ errors.first('address-number') }}
+                  </div>
                 </div>
               </div>
 
@@ -54,7 +63,10 @@
               <div class="col-3">
                 <div class="form-group">
                   <label for="">CEP</label>
-                  <input class="form-control" type="text" id="zip-code" name="zip-code" value="" v-model="company.zip_code">
+                  <input class="form-control" type="text" id="zip-code" name="zip-code" value="" v-model="company.zip_code" v-validate="'required'">
+                  <div class="help-block">
+                    {{ errors.first('zip-code') }}
+                  </div>
                 </div>
               </div>
 
@@ -62,7 +74,10 @@
                 <div class="form-group">
                   <label for="">Cidade/Estado</label>
                   <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
-                  <vue-bootstrap-typeahead id="city-state" name="city-state" :data="getCitiesMappeadWithState" v-model="company.city"></vue-bootstrap-typeahead>
+                  <vue-bootstrap-typeahead id="city-state" name="city-state" :data="getCitiesMappeadWithState" v-model="company.city" v-validate="'required'"></vue-bootstrap-typeahead>
+                  <div class="help-block">
+                    {{ errors.first('city-state') }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -89,7 +104,10 @@
               <div class="col-6">
                 <div class="form-group">
                   <label for="">Contato</label>
-                  <input class="form-control" type="text" id="email" name="email" value="" v-model="company.email">
+                  <input class="form-control" type="text" id="email" name="email" value="" v-model="company.email" v-validate="'required'">
+                  <div class="help-block">
+                    {{ errors.first('email') }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -136,8 +154,8 @@
         <div class="product-box-img">
           <template v-for="(v,i) in products">
               <input-image-product :key="i" :index="i" @add="addProduct" @remove="removeProduct"></input-image-product>
-          </template>        
-          
+          </template>
+
 
           <button class="btn-circle" @click="addImage()" type="button" name="button">+</button>
         </div>
@@ -161,6 +179,11 @@
 
   .btn-default, .btn-primary {
     font-size: 36px;
+  }
+
+  .help-block {
+    color: red;
+    font-size: 0.8em;
   }
 
   .company-cover {
