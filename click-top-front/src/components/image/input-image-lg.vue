@@ -21,8 +21,17 @@
   </div>
 </template>
 <style lang="scss" scoped>
+  .inline {
+    position: relative;
+  }
   .close {
     font-size: 2em;
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  img {
+    max-width: 803px;
   }
 </style>
 <script>

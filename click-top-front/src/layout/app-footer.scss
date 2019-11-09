@@ -2,14 +2,23 @@
 
 .footer {
   background-color:                      $darkness-blue;
+  // height:                                520px;
+  .row {
+    height: 520px;
+  }
   h5, ul li a {
     color:                               white;
   }
   h5 {
     font-weight:                         normal;
   }
+  img {
+    width:                               350px;
+  }
   ul {
+    vertical-align: top;
     li {
+      margin-bottom: 10px;
       a {
         font-size:                       1.2em;
         text-transform:                  uppercase;
@@ -18,6 +27,8 @@
     }
   }
   .link-tryia {
+    // line-height: 2;
+    padding-bottom: 20px;
     text-align:                          center;
     margin:                              0;
     &, & a {
