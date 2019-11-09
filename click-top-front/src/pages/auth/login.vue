@@ -6,13 +6,13 @@
           <div class="col-12">
             <div class="form-group">
               <label for="">Usuário:</label>
-              <input v-model="request.email" class="form-control" type="text" >
+              <input v-model="request.email" id="login-email" class="form-control" type="text" >
             </div>
             <div class="form-group">
               <label for="">Senha:</label>
-              <input v-model="request.password" class="form-control" type="password" >
+              <input v-model="request.password" id="login-password" class="form-control" type="password" >
             </div>
-            <button class="btn-primary" type="button" name="button" @click="login">Entrar</button>
+            <button class="btn-primary" id="bt-login" type="button" name="button" @click="login">Entrar</button>
           </div>
         </div>
       </form>

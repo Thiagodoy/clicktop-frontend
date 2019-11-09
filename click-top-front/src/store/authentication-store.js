@@ -32,10 +32,8 @@ const userStore = {
     },
     actions: {
         actLogin({ commit, getters }, payload) {            
-            return AuthService.auth(payload).then(response => {
-                debugger;
-               commit(MAIN_LOGIN, response);
-               console.log(instance);
+            return AuthService.auth(payload).then(response => {                
+               commit(MAIN_LOGIN, response);               
                instance.$session.set('user', response);
                return Promise.resolve(true);               
             }).catch((error)=>{

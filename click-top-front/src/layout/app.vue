@@ -47,6 +47,9 @@ export default {
     //Cria cache da cidades
     this.actLoadCities();
 
+    //Load all categorys
+    this.actLoadCategory();
+
 
     // router.push(router);
 
@@ -55,7 +58,7 @@ export default {
 
   },
   methods:{
-    ...mapActions(['actLoadCities'])
+    ...mapActions(['actLoadCities','actLoadCategory'])
   },
   components: {
       AppHeader, AppFooter, Home, RegisterCompany, RegisterUser, Login

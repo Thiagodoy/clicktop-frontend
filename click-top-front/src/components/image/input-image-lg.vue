@@ -48,7 +48,7 @@ export default {
 
       reader.onload = (e) => {
         this.image = e.target.result;
-        this.$emit('add', this.image);
+        this.$emit('addCapa', this.image);
 
       };
       reader.readAsDataURL(file);
@@ -56,7 +56,7 @@ export default {
     },
     removeImage: function (e) {
       this.image = '';
-      this.$emit('remove');
+      this.$emit('removeCapa');
     }
   }
 }

@@ -1,16 +1,16 @@
 <template>
   <div class="inline">
-    <div v-if="!image">
-      <label for="image">
+    <div v-if="!imageProduct">
+      <label :for="`produto-empresa-${this.index}`">
         <img class="company-cover" src="../../assets/img/produtoempresa.png"/>
       </label>
       <!-- <div class="upload-btn-wrapper text-center"> -->
-        <input type="file" @change="onFileChange" id="image">
+        <input type="file" @change="onFileChangeProduct" :id="`produto-empresa-${this.index}`">
       <!-- </div> -->
     </div>
     <div v-else>
-      <img class="company-cover" v-bind:src="image" />
-      <button type="button" class="close" aria-label="Close" @click="removeImage">
+      <img class="company-cover" v-bind:src="imageProduct" />
+      <button type="button" class="close" aria-label="Close" @click="removeImageProduct">
         <span aria-hidden="true">&times;</span>
       </button>
       <!-- <button class="btn btn-danger center upper" @click="removeImage">
@@ -30,31 +30,31 @@ export default {
   props:['index', 'type'],
   data() {
     return {
-      image: undefined
+      imageProduct: undefined
     }
   },
   methods: {
-    onFileChange(e) {
-      console.log(e);
+    onFileChangeProduct(e) {
+      
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length)
       return;
-      this.createImage(files[0]);
+      this.createImageProduct(files[0]);
     },
-    createImage(file) {
+    createImageProduct(file) {
 
       var reader = new FileReader();
 
-      reader.onload = (e) => {
-      this.image = e.target.result;
-        this.$emit('add',{index:this.index, image:this.image});
+      reader.onload = (e) => {        
+        this.imageProduct = e.target.result;   
+        this.$emit('addProduct',{index:this.index, image:this.imageProduct});
       };
-
+      
       reader.readAsDataURL(file);
     },
-    removeImage: function (e) {
-      this.image = '';
-      this.$emit('remove');
+    removeImageProduct() {
+      this.imageProduct = '';
+      this.$emit('removeProduct', this.index);
     }
   }
 }

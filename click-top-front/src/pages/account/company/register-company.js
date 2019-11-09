@@ -12,13 +12,15 @@ export default {
   data() {
     return {
       company: {
-        telephones:[]
+        telephones:[],
+        id_city:'',
+        id_category:''
       },
       products:[],
-      cities: [],
-      loading: false,
+      cities: [],      
       profile:undefined,
-      cover:undefined
+      cover:undefined,      
+      
     }
   },
   mounted() {
@@ -43,10 +45,11 @@ export default {
     addImage(){
       this.products.push({});
     },
-    removeProduct(){
+    removeProduct(index){
+      debugger;
       for(let i = 0; i < this.products.length; i++){
-        if(i == image.index){
-          this.products[i] = {};
+        if(i == index){
+          this.products.splice(index,1);
           break;
         }
       }
@@ -61,11 +64,29 @@ export default {
       }
 
     },
+    getCityId(){
+
+      let name_city = this.company.id_city.split('/')[0].trim();
+      let state = this.company.id_city.split('/')[1].trim();
+
+      return this.getCities.find(c=> c.name_city == name_city && c.state.initials == state).id;
+
+    },
+
+    getCategoryId(){
+      return this.getCategory.find(c=> c.name == this.company.id_category).id;
+    },
+
     saveCompany() {
 
-      this.$validator.validateAll().then(response=>{
+      this.errors.clear();
 
-        let galery = new Array(this.products);
+      this.$validator.validateAll().then(response=>{
+        
+        if(!response)return;
+
+        let galery = new Array();
+        galery = galery.concat(this.products.filter(p=> !!p.image));
 
          if(this.profile){
           galery.push(this.profile);
@@ -77,6 +98,8 @@ export default {
 
          if(galery.length > 0){
            this.company.galery = galery;
+         }else{
+           this.company.galery = undefined;
          }
 
          if(this.company.telephones.length == 0){
@@ -89,34 +112,31 @@ export default {
           password:"clicktop2020"
          };
 
-
-           let name_city = this.company.id_city.split('/')[0].trim();
-           let state = this.company.id_city.split('/')[1].trim();
-debugger; 
-           console.log('city', this.getCities.cities.find(c=> c.name_city == name_city && c.state.initials == state));
-
-         console.log('store', this.$store.getters.getCityId(this.company.id_city));
-         console.log('getCityId', this.getCityId(this.company.id_city));
-
-
-         return;
-
+         this.company.id_city = `${this.getCityId()}`; 
+         this.company.id_category = `${this.getCategoryId()}`;                        
+         
          CompanyService.saveCompany(this.company).then(()=>{
            alert("Empresa salva com sucesso!");
-         }).then((e)=>{
-           console.error(e);
+           this.company = {
+            telephones:[],
+            id_city:'',
+            id_category:''
+          };
+          this.products=[];
+          this.profile = undefined;
+          this.cover = undefined;
+         }).catch((e)=>{           
            alert('Erro ao salvar!');
-         })
+           console.error(e);
+         });
 
-
-
-      }).catch(erro=>{
-        console.log('error', erro);
+      }).catch(error=>{        
+        console.error( error);
       })
     },
   },
   computed:{
-    ...mapGetters(['getCitiesMappeadWithState','getCityId','getCities']),
+    ...mapGetters(['getCitiesMappeadWithState','getCities','getCategoryMapped','getCategory']),
     telephone:{
       set: function(value){
 
@@ -162,7 +182,7 @@ debugger;
       }
     },
     cellPhoneWhat:{
-      set:function(value){
+      set: function(value){
 
         const tel = this.company.telephones.find(t=> t.type == 'WHATSAPP');
 
@@ -179,15 +199,16 @@ debugger;
 
       },
       get:function(){
-        let tel = this.company.telephones.find(t=> t.type == 'COMMERCIAL');
-        return tel ? tel.value : '';
+        let tel = this.company.telephones.find(t=> t.type == 'WHATSAPP');
+        return tel ? tel.number : '';
       }
     }
   },
   components: {
-      InputImageProduct,
-      InputImageProfile,
-      InputImageLg,
-      VueBootstrapTypeahead
+      'input-image-product':InputImageProduct,
+      'input-image-profile':InputImageProfile,
+      'input-image-lg':InputImageLg,
+      "auto-complete-city":VueBootstrapTypeahead,
+      "auto-complete-category":VueBootstrapTypeahead
   },
 }

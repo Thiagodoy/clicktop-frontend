@@ -20,7 +20,7 @@
         <a class="nav-link up" href="#" tabindex="-1" aria-disabled="true">baixe nosso aplicativo</a>
       </li>
       <li class="float-right">
-        <a @click="toLogin()">
+        <a @click="toLogin()" id="header-login">
           Área do consultor
           <i></i>
         </a>
