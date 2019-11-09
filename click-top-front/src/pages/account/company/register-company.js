@@ -79,7 +79,8 @@ export default {
 
     saveCompany() {
 
-      this.errors.clear();
+      this.errors.clear();       
+
 
       this.$validator.validateAll().then(response=>{
         
@@ -122,9 +123,14 @@ export default {
             id_city:'',
             id_category:''
           };
+
           this.products=[];
           this.profile = undefined;
           this.cover = undefined;
+          this.$refs.profile.removeImageProfile();
+          this.$refs.cover.removeImage();
+          this.$refs.autoCompleteCategory.inputValue = '';
+          this.$refs.autoCompleteCityAndState.inputValue = '';
          }).catch((e)=>{           
            alert('Erro ao salvar!');
            console.error(e);

@@ -20,7 +20,7 @@
                   <label for="">Categoria</label>
                   <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
 
-                  <auto-complete-category id="category" name="category" :data="getCategoryMapped" v-model="company.id_category" v-validate="'required'"></auto-complete-category>
+                  <auto-complete-category ref="autoCompleteCategory" id="category" name="category" :data="getCategoryMapped" v-model="company.id_category" v-validate="'required'"></auto-complete-category>
                   <div class="help-block">
                     {{ errors.first('category') }}
                   </div>
@@ -105,7 +105,7 @@
                   <label for="">Cidade/Estado</label>
                   <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
 
-                  <auto-complete-city id="city-state" name="city-state" :data="getCitiesMappeadWithState" v-model="company.id_city" v-validate="'required'"></auto-complete-city>
+                  <auto-complete-city id="city-state" ref="autoCompleteCityAndState" name="city-state" :data="getCitiesMappeadWithState" v-model="company.id_city" v-validate="'required'"></auto-complete-city>
                   <div class="help-block">
                     {{ errors.first('city-state') }}
                   </div>
@@ -182,8 +182,8 @@
 
 
           <div class="company-box-img margin-b20">
-                <input-image-profile @addProfile="setProfile" @removeProfile="removeProfile"></input-image-profile>
-                <input-image-lg @addCapa="setCover" @removeCapa="removeCover" class="float-right"></input-image-lg>
+                <input-image-profile ref="profile" @addProfile="setProfile" @removeProfile="removeProfile"></input-image-profile>
+                <input-image-lg ref="cover" @addCapa="setCover" @removeCapa="removeCover" class="float-right"></input-image-lg>
           </div>
 
 
