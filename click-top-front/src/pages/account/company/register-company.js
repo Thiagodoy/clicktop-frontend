@@ -13,6 +13,8 @@ export default {
     return {
       company: {
         telephones:[],
+        city:'',
+        category:'',
         id_city:'',
         id_category:''
       },
@@ -66,15 +68,15 @@ export default {
     },
     getCityId(){
 
-      let name_city = this.company.id_city.split('/')[0].trim();
-      let state = this.company.id_city.split('/')[1].trim();
+      let name_city = this.company.city.split('/')[0].trim();
+      let state = this.company.city.split('/')[1].trim();
 
       return this.getCities.find(c=> c.name_city == name_city && c.state.initials == state).id;
 
     },
 
     getCategoryId(){
-      return this.getCategory.find(c=> c.name == this.company.id_category).id;
+      return this.getCategory.find(c=> c.name == this.company.category).id;
     },
 
     saveCompany() {
@@ -82,9 +84,15 @@ export default {
       this.errors.clear();       
 
 
+     
+
+
       this.$validator.validateAll().then(response=>{
         
-        if(!response)return;
+        if(!response){
+          alert('Existe campos obrigatórios que não foram preenchidos!');
+          return;
+        }
 
         let galery = new Array();
         galery = galery.concat(this.products.filter(p=> !!p.image));
@@ -115,13 +123,17 @@ export default {
 
          this.company.id_city = `${this.getCityId()}`; 
          this.company.id_category = `${this.getCategoryId()}`;                        
+
+         
          
          CompanyService.saveCompany(this.company).then(()=>{
            alert("Empresa salva com sucesso!");
            this.company = {
             telephones:[],
             id_city:'',
-            id_category:''
+            id_category:'',
+            city:'',
+            category:''
           };
 
           this.products=[];
