@@ -19,6 +19,11 @@
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+  button {
+    margin-bottom: 30px;
+  }
+</style>
 <script>
 
 import {mapActions} from 'vuex';

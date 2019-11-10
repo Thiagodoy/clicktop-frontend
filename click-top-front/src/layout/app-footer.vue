@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
       <div class="container md">
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-3">
             <h5>Links</h5>
             <ul>
@@ -29,7 +29,7 @@
             </ul>
           </div>
           <div class="col-3">
-            <img src="../assets/img/logo.png" alt="">
+            <img src="../assets/img/logo_clicktop.png" alt="">
           </div>
         </div>
         <h5 class="link-tryia">Desenvolvido por <a href="#">Tryía Produtos Digitais</a></h5>

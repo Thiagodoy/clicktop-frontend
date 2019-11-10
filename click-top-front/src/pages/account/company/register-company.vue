@@ -5,11 +5,27 @@
       <form class="" action="index.html" method="post">
         <div class="row">
           <div class="col">
-            <div class="form-group">
-              <label for="">Nome da empresa (Nome Fantasia)</label>
-              <input class="form-control" type="text" id="company-name" name="company-name" value="" v-model="company.name" v-validate="'required'">
-              <div class="help-block">
-                {{ errors.first('company-name') }}
+            <div class="row">
+              <div class="col-8">
+                <div class="form-group">
+                  <label for="">Nome da empresa (Nome Fantasia)</label>
+                  <input class="form-control" type="text" id="company-name" name="company-name" value="" v-model="company.name" v-validate="'required'">
+                  <div class="help-block">
+                    {{ errors.first('company-name') }}
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Categoria</label>
+                  <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
+
+                  <auto-complete-category ref="autoCompleteCategory" id="category" name="category" :data="getCategoryMapped" v-model="company.id_category" v-validate="'required'"></auto-complete-category>
+                  <div class="help-block">
+                    {{ errors.first('category') }}
+                  </div>
+
+                </div>
               </div>
             </div>
 
@@ -46,18 +62,15 @@
               </div>
               <div class="col-4">
                 <div class="form-group">
-                  <label for="">Categoria</label>
-                  <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
-
-                  <auto-complete-category ref="autoCompleteCategory" id="category" name="category" :data="getCategoryMapped" v-model="company.id_category" v-validate="'required'"></auto-complete-category>
-                  <div class="help-block">
-                    {{ errors.first('category') }}
-                  </div>
-
+                    <label for="">Bairro</label>
+                    <input class="form-control" type="text" id="neighborhood" name="neighborhood" value="" v-model="company.address_neighborhood" v-validate="'required'">
+                    <div class="help-block">
+                      {{ errors.first('neighborhood') }}
+                    </div>
                 </div>
-              </div>            
+              </div>
             </div>
-            
+
 
             <div class="row">
               <div class="col-2">
@@ -167,13 +180,13 @@
           </div>
         </div>
 
-       
+
           <div class="company-box-img margin-b20">
                 <input-image-profile ref="profile" @addProfile="setProfile" @removeProfile="removeProfile"></input-image-profile>
                 <input-image-lg ref="cover" @addCapa="setCover" @removeCapa="removeCover" class="float-right"></input-image-lg>
           </div>
-       
-        
+
+
 
           <div class="product-box-img">
             <template v-for="(v,i) in products">
@@ -181,9 +194,9 @@
             </template>
             <button class="btn-circle" @click="addImage()" type="button" name="button">+</button>
           </div>
-       
 
-        
+
+
 
         <div class="text-right margin-20">
           <button class="btn-default up" type="button" name="button">cancelar</button>
