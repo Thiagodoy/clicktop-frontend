@@ -45,12 +45,12 @@ export default {
 
      // this.$router.push({name: 'account/company/list-company'});
       this.actLogin(this.request).then((response)=>{
-      // console.log(response);
-        // if(response){
+      console.log(response);
+        if(response){
           this.$router.push({name: 'company'});
-        // }else{
-          // alert('Usuário ou  password inválido!');
-        // }
+        }else{
+          alert('Usuário ou  password inválido!');
+        }
       });
 
     },
