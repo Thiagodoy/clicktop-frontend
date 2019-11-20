@@ -12,9 +12,14 @@ class CompanyService extends Service {
      * @param {*} request
      * @memberof CompanyService
      */
-    saveCompany(request){        
-      return this.post(request).then(resp =>{return resp;});
-    }
+     saveCompany(request){
+       return this.post(request).then(resp =>{return resp;});
+     }
+
+     listCompany(){
+       return this.get();
+       // return this.post(request).then(resp =>{return resp;});
+     }
 
 
 }

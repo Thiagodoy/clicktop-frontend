@@ -16,3 +16,4 @@
     </div>
   </div>
 </template>
+<script src="./list-company.js"></script>

@@ -7,6 +7,7 @@ import Home from '../pages/external/home.vue';
 import Internal from '../pages/internal/internal.vue';
 import Login from '../pages/auth/login.vue';
 import RegisterCompany from '../pages/account/company/register-company.vue';
+import ListCompany from '../pages/account/company/list-company.vue';
 import RouterGuard from '../routes/router-guard';
 
 
@@ -21,10 +22,11 @@ export default new Router({
 
      { name: 'home', path: '/', component: Home, display: 'home' },
      { name: 'login', path: '/login', component: Login, display: 'login' },
-     { name: 'internal', path: '/internal', component: Internal, display: 'internal', 
-       beforeEnter: RouterGuard.checkUserIsLogged.bind(RouterGuard), 
+     { name: 'internal', path: '/internal', component: Internal, display: 'internal',
+       beforeEnter: RouterGuard.checkUserIsLogged.bind(RouterGuard),
        children: [
-        { name: 'company', path: '/company', component: RegisterCompany, display: 'company'}
+        { name: 'company', path: '/company', component: RegisterCompany, display: 'company'},
+        { name: 'list-company', path: '/list-company', component: ListCompany, display: 'list-company'}
        ]
     },
 

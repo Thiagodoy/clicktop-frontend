@@ -43,7 +43,7 @@ export default {
 
       //:TODO Implementar validações
 
-     // this.$router.push({name: 'account/company/register-company'});
+     // this.$router.push({name: 'account/company/list-company'});
       this.actLogin(this.request).then((response)=>{
 
         if(response){

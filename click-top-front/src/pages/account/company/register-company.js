@@ -17,17 +17,19 @@ export default {
         id_category:''
       },
       products:[],
-      cities: [],      
+      cities: [],
       profile:undefined,
-      cover:undefined,      
-      
+      cover:undefined,
+
     }
   },
   mounted() {
 
   },
   methods: {
-
+    toList(){
+      this.$router.push({name:'list-company'});
+    },
     removeCover(){
       this.cover = undefined;
     },
@@ -79,11 +81,11 @@ export default {
 
     saveCompany() {
 
-      this.errors.clear();       
+      this.errors.clear();
 
 
       this.$validator.validateAll().then(response=>{
-        
+
         if(!response)return;
 
         let galery = new Array();
@@ -113,9 +115,9 @@ export default {
           password:"clicktop2020"
          };
 
-         this.company.id_city = `${this.getCityId()}`; 
-         this.company.id_category = `${this.getCategoryId()}`;                        
-         
+         this.company.id_city = `${this.getCityId()}`;
+         this.company.id_category = `${this.getCategoryId()}`;
+
          CompanyService.saveCompany(this.company).then(()=>{
            alert("Empresa salva com sucesso!");
            this.company = {
@@ -131,12 +133,12 @@ export default {
           this.$refs.cover.removeImage();
           this.$refs.autoCompleteCategory.inputValue = '';
           this.$refs.autoCompleteCityAndState.inputValue = '';
-         }).catch((e)=>{           
+         }).catch((e)=>{
            alert('Erro ao salvar!');
            console.error(e);
          });
 
-      }).catch(error=>{        
+      }).catch(error=>{
         console.error( error);
       })
     },

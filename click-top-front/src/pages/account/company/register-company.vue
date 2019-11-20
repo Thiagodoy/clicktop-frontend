@@ -199,6 +199,7 @@
 
 
         <div class="text-right margin-20">
+          <button class="btn-default up float-left" type="button" name="button" @click="toList()">listar</button>
           <button class="btn-default up" type="button" name="button">cancelar</button>
           <button class="btn-primary up" @click="saveCompany()" id="btn-company-save" type="button" name="button">salvar</button>
         </div>
