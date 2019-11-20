@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col">
             <div class="row">
-              <div class="col-8">
+              <div class="col-4">
                 <div class="form-group">
                   <label for="">Nome da empresa (Nome Fantasia)</label>
                   <input class="form-control" type="text" id="company-name" name="company-name" value="" v-model="company.name" v-validate="'required'">
@@ -20,9 +20,27 @@
                   <label for="">Categoria</label>
                   <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
 
-                  <auto-complete-category ref="autoCompleteCategory" id="category" name="category" :data="getCategoryMapped" v-model="company.id_category" v-validate="'required'"></auto-complete-category>
+                  <auto-complete-category ref="autoCompleteCategory" id="category" name="category" :data="getCategoryMapped" v-model="company.category" v-validate="'required'"></auto-complete-category>
                   <div class="help-block">
                     {{ errors.first('category') }}
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Plano</label>
+                  <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
+                  <select name="plan" id="plan" v-model="company.plan" class="form-control">
+                    <option value="1">Grátis</option>
+                    <option value="2">Prata</option>
+                    <option value="3">Prata Top</option>
+                    <option value="4">Ouro</option>
+                    <option value="5">Ouro Top</option>
+                  </select>
+                  
+                  <div class="help-block">
+                    {{ errors.first('plan') }}
                   </div>
 
                 </div>
@@ -105,7 +123,7 @@
                   <label for="">Cidade/Estado</label>
                   <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
 
-                  <auto-complete-city id="city-state" ref="autoCompleteCityAndState" name="city-state" :data="getCitiesMappeadWithState" v-model="company.id_city" v-validate="'required'"></auto-complete-city>
+                  <auto-complete-city id="city-state" ref="autoCompleteCityAndState" name="city-state" :data="getCitiesMappeadWithState" v-model="company.city" v-validate="'required'"></auto-complete-city>
                   <div class="help-block">
                     {{ errors.first('city-state') }}
                   </div>

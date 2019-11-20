@@ -10,15 +10,14 @@ export default class Service {
             baseURL: `${process.env.VUE_APP_BASE_PATH}${url}`,
             timeout: 100000,
             headers: { 'Access-Control-Allow-Origin': '*' },
-            // transformRequest: [ (data, header) =>{ 
-            //     debugger;                
-            //     let token = TokenService.getToken();                
-            //     if(token){
-            //         header['Authorization'] = `${token}`; 
-            //     }
+            transformRequest: [ (data, header) =>{                               
+                let token = TokenService.getToken();                
+                if(token){
+                    header['Authorization'] = `${token}`; 
+                }
 
-            //     return JSON.stringify(data);
-            // }],
+                return JSON.stringify(data);
+            }],
         });
         this._api.interceptors.response.use(...Interceptor.configure());
         this._url = '';

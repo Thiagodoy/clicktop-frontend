@@ -11,6 +11,12 @@
           </tr>
         </thead>
         <tbody>
+          <tr v-for="comp in companies">
+            <td>{{ comp.id }}</td>
+            <td>{{ comp.name }}</td>
+            <td>{{ comp.status }}</td>
+            <td>{{ comp.id }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
