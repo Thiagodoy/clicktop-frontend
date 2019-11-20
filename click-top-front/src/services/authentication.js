@@ -14,10 +14,7 @@ class AuthenticationService extends Service{
      * @memberof AuthenticationService
      */
     auth(request){        
-        return this.post(request);
-        // .then(response=>{
-        //     TokenService.setToken(response.token);
-        // });
+        return this.post(request);       
     }
 
 }

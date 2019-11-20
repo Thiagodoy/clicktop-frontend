@@ -9,8 +9,11 @@ export default class Service {
         this._api = axios.create({
             baseURL: `${process.env.VUE_APP_BASE_PATH}${url}`,
             timeout: 100000,
-            headers: { 'Access-Control-Allow-Origin': '*' },
-            transformRequest: [ (data, header) =>{                               
+            headers: { 'Access-Control-Allow-Origin': '*',
+                       'Content-Type': 'application/json; charset=utf-8', 
+                       'Accept': 'application/json'
+            },
+            transformRequest: [ (data, header) =>{                                            
                 let token = TokenService.getToken();                
                 if(token){
                     header['Authorization'] = `${token}`; 

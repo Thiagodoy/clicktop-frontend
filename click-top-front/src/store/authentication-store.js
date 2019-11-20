@@ -18,10 +18,8 @@ const userStore = {
         user: undefined,       
     },
     mutations: {
-        [MAIN_LOGIN](state, obj) {
-           
-            state.user = obj;
-            //sessionStorage.setItem('user', JSON.stringify(state.user));
+        [MAIN_LOGIN](state, obj) {           
+            state.user = obj;           
         },
        
     },
@@ -35,6 +33,7 @@ const userStore = {
             return AuthService.auth(payload).then(response => {                
                commit(MAIN_LOGIN, response);               
                instance.$session.set('user', response);
+               TokenService.setToken(response.token);
                return Promise.resolve(true);               
             }).catch((error)=>{
                 return Promise.resolve(false)
