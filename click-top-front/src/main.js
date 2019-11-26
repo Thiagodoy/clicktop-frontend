@@ -47,13 +47,13 @@ Validator.localize('pt_BR', ptBr);
 // Vue.use(VueValidate,{
 //   locale: 'pt_BR',
 //  // dictionary,
-  
+
 // });
 
 
 const instance = new Vue({
   router,
-  store,  
+  store,
   render: h => h(App)
 }).$mount('#app')
 

@@ -14,7 +14,7 @@ h1 {
 }
 
 .form-control {
-  &.search {
+  &.no-border {
     background: $dark-blue;
     color: white;
     border: 0;
@@ -26,11 +26,41 @@ h1 {
       box-shadow: none;
     }
   }
+  &.search {
+  }
 }
 
 .search-box {
   p, b {
     color: white;
+  }
+}
+
+.fast-search-box {
+  .form-control {
+    border: 0;
+    border-bottom: 1px solid $dark-blue;;
+    text-align: center;
+    height: 30px;
+    margin: 10px 0;
+    @include border-radius(0);
+    color: $semi-light-blue;
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $semi-light-blue;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $semi-light-blue;
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: $semi-light-blue;
   }
 }
 
@@ -48,6 +78,9 @@ h1 {
     margin: 5px 5px 5px 0;
     padding: 15px 15px 70px;
     position: relative;
+    img {
+      height: 40px;
+    }
     p {
       line-height: 1.1;
       margin: 0;

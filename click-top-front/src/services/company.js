@@ -16,9 +16,14 @@ class CompanyService extends Service {
        return this.post(request).then(resp =>{return resp;});
      }
 
-     listCompany(){
-       return this.get();
+     listCompany(request){
+       console.log(request, ' request company');
+       return this.get(request, true);
        // return this.post(request).then(resp =>{return resp;});
+     }
+
+     deleteCompany(request) {
+       return this.delete(request).then(resp =>{return resp;});
      }
 
 

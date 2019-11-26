@@ -1,11 +1,25 @@
 @import "../styles/global/_colors.scss";
 
+.menu {
+  height:                       120px;
+  .row {
+    height: 100%;
+  }
+  .nav-link {
+    img {
+      height:                   72px;
+    }
+  }
+}
+
 ul {
-  width:                        calc(100% - 140px);
+  width:                        calc(100% - 150px);
   text-align:                   center;
   li {
     display:                    inline-block;
     a {
+      font-size:                24px;
+      font-weight:              bold;
       color:                    $dark-blue;
     }
   }

@@ -2,16 +2,35 @@
   <div class="">
     <div class="search-box">
       <div class="container md">
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-3 margin-t10">
-            <i></i>
-            <div class="inline">
-              <p class="no-margin">Você está em:</p>
-              <b class="no-margin">Passos de Minas, MG</b>
-            </div>
           </div>
           <div class="col-6">
-            <input class="form-control search margin-t20" type="text" name="" value="" placeholder="O que você deseja encontrar?">
+            <input class="form-control no-border" type="text" name="" value="" placeholder="O que você deseja encontrar?">
+          </div>
+          <div class="offset-1 col-2">
+            <div class="">
+              <small class="no-margin">Digite seu estado ou cidade:</small>
+              <input class="form-control no-border" type="text" name="" value="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fast-search-box">
+      <div class="container md">
+        <div class="row align-items-center">
+          <div class="col-3">
+
+          </div>
+          <div class="col-6">
+            <input class="form-control" type="text" name="" value="" placeholder="Faça um busca rápida em nossa agenda telefônica">
+          </div>
+          <div class="offset-1 col-2">
+            <div class="">
+
+            </div>
           </div>
         </div>
       </div>
@@ -44,44 +63,46 @@
       </a>
     </div>
 
+    <carousel-multi></carousel-multi>
+
     <div class="container md margin-t15">
       <ul class="short-menu">
         <li>
-          <img src="../../assets/img/logo.png" alt="" width="40px">
+          <img src="../../assets/img/ico/XMLID_312_.svg" alt="">
           <p>Animais e plantas</p>
         </li>
         <li>
-          <img src="../../assets/img/logo.png" alt="" width="40px">
+          <img src="../../assets/img/ico/artesanato.svg" alt="">
           <p>Artesanato</p>
         </li>
         <li>
-          <img src="../../assets/img/logo.png" alt="" width="40px">
+          <img src="../../assets/img/ico/auto.svg" alt="">
           <p>Automóveis, Veículos e Serviços</p>
         </li>
         <li>
-          <img src="../../assets/img/logo.png" alt="" width="40px">
+          <img src="../../assets/img/ico/bebidas_alimentos.svg" alt="">
           <p>Bebidas e Alimentos</p>
         </li>
         <li>
-          <img src="../../assets/img/logo.png" alt="" width="40px">
+          <img src="../../assets/img/ico/bebidas_alimentos.svg" alt="">
           <p>Bebidas e Alimentos</p>
         </li>
         <li>
-          <img src="../../assets/img/logo.png" alt="" width="40px">
+          <img src="../../assets/img/ico/casa_decoração.svg" alt="">
           <p>Casa e Decoração</p>
         </li>
         <li>
-          <img src="../../assets/img/logo.png" alt="" width="40px">
+          <img src="../../assets/img/ico/Comunicacao_publicidade.svg" alt="">
           <p>Comunicação e Publicidade</p>
         </li>
         <li>
-          <img src="../../assets/img/logo.png" alt="" width="40px">
+          <img src="../../assets/img/ico/construcao_reformas.svg" alt="">
           <p>Construção, Reforma e Serviços</p>
         </li>
       </ul>
     </div>
 
-    <div class="container lg margin-t30">
+    <!-- <div class="container lg margin-t30">
       <div class="row partner-line">
         <div class="col-3">
           <img class="partner-item" src="../../assets/img/damadagua.png" alt="">
@@ -96,139 +117,205 @@
           <img class="partner-item" src="../../assets/img/bela.png" alt="">
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container lg hr-lines">
       <hr><hr><hr><hr>
+      <h1 class="text-center title margin-t30">Timeline Click Top</h1>
     </div>
+
 
     <section class="content-home">
       <div class="container lg">
-        <div class="row">
-          <div class="col-3 content-menu">
-            <h3 class="up">categorias</h3>
-            <ul>
-              <li>Animais e plantas</li>
-              <li>Artesanato</li>
-              <li>Automóveis, Veículos e Serviços</li>
-              <li>Bebidas e Alimentos</li>
-              <li>Casa e Decoração</li>
-              <li>Comunicação e Publicidade</li>
-              <li>Construção, Reforma e Serviços</li>
-              <li>Educação e Cultura</li>
-              <li>Entretenimento, Festas e Eventos</li>
-              <li>Esporte e Lazer</li>
-              <li>Informática e Papelaria</li>
-              <li>Produtos e Variedades</li>
-              <li>Roupas e Acessórios</li>
-              <li>Saúde, Estética e Beleza</li>
-              <li>Serviços</li>
-            </ul>
+        <div class="timeline-box">
+          <div class="line justify-content-between">
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
           </div>
-          <div class="col-9">
-            <!-- 1 -->
-            <div class="content-box">
-              <div class="inline">
-                <img class="company-logo" src="../../assets/img/frontal.png" alt="">
-              </div>
-              <div class="inline">
-                <p>
-                  Temos 25 anos de experiência e somos um dos maiores fabricantes de Lentes e Óculos do Brasil. Encontre aqui as melhores opções
-                  de lentes de contato com grau e sem grau pelos melhores preços e condições especiais de pagamento.
-                </p>
-                <p>Horário de Funcionamento Seg. a Sex. das 9h às 17h</p>
-                <div class="content-box-contact">
-                  <div class="inline">
-                    <p>Tel: (31) 3208-7153</p>
-                    <p>Tel: (31) 3208-7153</p>
-                  </div>
-                  <div class="inline">
-                    <img class="inline" src="../../assets/img/whats.png" alt="">
-                    <p class="inline">Tel: (31) 99688-7153</p>
-                  </div>
-                </div>
-                <a href="#">contato@visionCenter.com.br</a>
-                <div class="social-media">
-                  <a href="#"><img src="../../assets/img/face.png" alt=""></a>
-                  <a href="#"><img src="../../assets/img/insta.png" alt=""></a>
-                </div>
-              </div>
-              <hr>
+
+          <div class="line justify-content-between">
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
             </div>
-            <!-- 2 -->
-            <div class="content-box">
-              <div class="inline">
-                <img class="company-logo" src="../../assets/img/bicho.png" alt="">
-              </div>
-              <div class="inline">
-                <p>
-                  Temos 25 anos de experiência e somos um dos maiores fabricantes de Lentes e Óculos do Brasil. Encontre aqui as melhores opções
-                  de lentes de contato com grau e sem grau pelos melhores preços e condições especiais de pagamento.
-                </p>
-                <p>Horário de Funcionamento Seg. a Sex. das 9h às 17h</p>
-                <div class="content-box-contact">
-                  <div class="inline">
-                    <p>Tel: (31) 3208-7153</p>
-                    <p>Tel: (31) 3208-7153</p>
-                  </div>
-                  <div class="inline">
-                    <img class="inline" src="../../assets/img/whats.png" alt="">
-                    <p class="inline">Tel: (31) 99688-7153</p>
-                  </div>
-                </div>
-                <a href="#">contato@visionCenter.com.br</a>
-                <div class="social-media">
-                  <a href="#"><img src="../../assets/img/face.png" alt=""></a>
-                  <a href="#"><img src="../../assets/img/insta.png" alt=""></a>
-                </div>
-              </div>
-              <hr>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
             </div>
-            <!-- 3 -->
-            <div class="content-box">
-              <div class="inline">
-                <img class="company-logo" src="../../assets/img/farmacia.png" alt="">
-              </div>
-              <div class="inline">
-                <p>
-                  Temos 25 anos de experiência e somos um dos maiores fabricantes de Lentes e Óculos do Brasil. Encontre aqui as melhores opções
-                  de lentes de contato com grau e sem grau pelos melhores preços e condições especiais de pagamento.
-                </p>
-                <p>Horário de Funcionamento Seg. a Sex. das 9h às 17h</p>
-                <div class="content-box-contact">
-                  <div class="inline">
-                    <p>Tel: (31) 3208-7153</p>
-                    <p>Tel: (31) 3208-7153</p>
-                  </div>
-                  <div class="inline">
-                    <img class="inline" src="../../assets/img/whats.png" alt="">
-                    <p class="inline">Tel: (31) 99688-7153</p>
-                  </div>
-                </div>
-                <a href="#">contato@visionCenter.com.br</a>
-                <div class="social-media">
-                  <a href="#"><img src="../../assets/img/face.png" alt=""></a>
-                  <a href="#"><img src="../../assets/img/insta.png" alt=""></a>
-                </div>
-              </div>
-              <hr>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+          </div>
+
+          <div class="line justify-content-between">
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+          </div>
+
+          <div class="line justify-content-between">
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
+            </div>
+            <div class="inline">
+              <img src="../../assets/img/img1.png" alt="">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="last-companies">
-      <h1 class="text-center">Últimas empresas cadastradas</h1>
+    <div class="container lg hr-lines">
+      <hr><hr><hr><hr>
+    </div>
 
+    <div class="container lg">
+      <h1>Empresas em destaque</h1>
+      <div class="company-box">
+        <div class="line justify-content-between">
+          <div class="inline">
+            <img src="../../assets/img/5-single.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_09_26_14_WDL-Logo-7184_6769_041335667_259168100.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_03_05_21_WDL-Logo-2192_724_033740449_868969945.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_08_25_10_WDL-Logo-6639_6769_041035737_930246410.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/05120f91bb9aca931161bb47c2876348.png" alt="">
+          </div>
+        </div>
+
+        <div class="line justify-content-between">
+          <div class="inline">
+            <img src="../../assets/img/5-single.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_09_26_14_WDL-Logo-7184_6769_041335667_259168100.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_03_05_21_WDL-Logo-2192_724_033740449_868969945.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_08_25_10_WDL-Logo-6639_6769_041035737_930246410.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/05120f91bb9aca931161bb47c2876348.png" alt="">
+          </div>
+        </div>
+
+        <div class="line justify-content-between">
+          <div class="inline">
+            <img src="../../assets/img/5-single.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_09_26_14_WDL-Logo-7184_6769_041335667_259168100.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_03_05_21_WDL-Logo-2192_724_033740449_868969945.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_08_25_10_WDL-Logo-6639_6769_041035737_930246410.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/05120f91bb9aca931161bb47c2876348.png" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container lg hr-lines">
+      <hr><hr><hr><hr>
+    </div>
+
+    <div class="container lg">
+      <h1>Últimas empresas cadastradas</h1>
+      <div class="company-box">
+        <div class="line justify-content-between">
+          <div class="inline">
+            <img src="../../assets/img/5-single.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_09_26_14_WDL-Logo-7184_6769_041335667_259168100.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_03_05_21_WDL-Logo-2192_724_033740449_868969945.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/fullsize_2011_08_25_10_WDL-Logo-6639_6769_041035737_930246410.png" alt="">
+          </div>
+          <div class="inline">
+            <img src="../../assets/img/05120f91bb9aca931161bb47c2876348.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container lg hr-lines">
+      <hr><hr><hr><hr>
+    </div>
+
+    <div class="container lg">
+      <h1>Conheça a cidade de <b>Passos de Minas/MG</b></h1>
 
     </div>
 
   </div>
 </template>
 <script>
+import CarouselMulti from '../../components/carousel-multi/carousel-multi.vue';
 export default {
+  data() {
+    return {
 
- 
+    }
+  },
+  components: {
+      'carousel-multi':CarouselMulti,
+  },
+
 }
 </script>

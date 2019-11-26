@@ -25,7 +25,20 @@ export default {
     }
   },
   mounted() {
-
+    let request = {
+      "id": this.companyId,
+      "galery": true,
+      "telephone": true
+    };
+    console.log(request, ' request edit');
+    CompanyService.listCompany(request).then((resp)=>{
+      this.company = resp;
+      // this.company.id_category = this.getCategory.find(c=> c.id_category == this.resp.id_category).name;
+      // this.company.id_city = resp.id_city;
+      console.log(resp, ' resp company');
+    }).catch((e)=>{
+      console.error(e);
+    });
   },
   methods: {
     toList(){
@@ -83,11 +96,6 @@ export default {
     saveCompany() {
 
       this.errors.clear();
-
-
-
-
-
       this.$validator.validateAll().then(response=>{
 
         // if(!response)return;
@@ -152,6 +160,10 @@ export default {
       }).catch(error=>{
         console.error( error);
       })
+    },
+    companyId() {
+      console.log(this.$route.params.id);
+      return this.$route.params.id;
     },
   },
   computed:{
@@ -221,7 +233,7 @@ export default {
         let tel = this.company.telephones.find(t=> t.type == 'WHATSAPP');
         return tel ? tel.number : '';
       }
-    }
+    },
   },
   components: {
       'input-image-product':InputImageProduct,
