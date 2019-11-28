@@ -28,6 +28,11 @@ Vue.use(VueTheMask);
 
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead);
 
+global.jQuery = require('jquery');
+var $ = global.jQuery;
+window.$ = $;
+window.jQuery = jQuery;
+
 //let messages = require('./i18n/lang.js')
 Vue.use(VueI18n)
 
