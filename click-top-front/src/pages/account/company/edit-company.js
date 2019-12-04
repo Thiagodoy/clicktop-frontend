@@ -24,21 +24,8 @@ export default {
       cover:undefined,
     }
   },
-  mounted() {
-    let request = {
-      "id": this.companyId,
-      "galery": true,
-      "telephone": true
-    };
-    console.log(request, ' request edit');
-    CompanyService.listCompany(request).then((resp)=>{
-      this.company = resp;
-      // this.company.id_category = this.getCategory.find(c=> c.id_category == this.resp.id_category).name;
-      // this.company.id_city = resp.id_city;
-      console.log(resp, ' resp company');
-    }).catch((e)=>{
-      console.error(e);
-    });
+  mounted() {      
+    console.log('EditCompany', this.getEditCompany);
   },
   methods: {
     toList(){
@@ -61,8 +48,7 @@ export default {
     addImage(){
       this.products.push({});
     },
-    removeProduct(index){
-      debugger;
+    removeProduct(index){      
       for(let i = 0; i < this.products.length; i++){
         if(i == index){
           this.products.splice(index,1);
@@ -167,7 +153,7 @@ export default {
     },
   },
   computed:{
-    ...mapGetters(['getCitiesMappeadWithState','getCities','getCategoryMapped','getCategory']),
+    ...mapGetters(['getCitiesMappeadWithState','getCities','getCategoryMapped','getCategory','getEditCompany']),
     telephone:{
       set: function(value){
 

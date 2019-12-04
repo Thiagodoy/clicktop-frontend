@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="comp in companies">
+          <tr v-for="(comp,i) in companies" :key="i">
             <td>{{ comp.id }}</td>
             <td>{{ comp.name }}</td>
             <td>{{ comp.status }}</td>
@@ -21,9 +21,10 @@
               <button type="button" name="button"  @click="deleteCompany(comp.id)">
                 <span style="color: red; font-weight: bold;">X</span>
               </button>
-              <router-link :to="{name: 'edit-company', params:{id: comp.id}}" tag="button">
+              <button @click="editCompany(comp)">
                 <span style="color: yellow; font-weight: bold;">E</span>
-              </router-link>
+              </button>
+              
             </td>
           </tr>
         </tbody>
