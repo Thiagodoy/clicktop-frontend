@@ -65,13 +65,13 @@ h1 {
 }
 
 .short-menu {
-  li {
+  .item {
     @include border-radius(5px);
     text-align: center;
     vertical-align: top;
     // width: 134px;
-    width: 12%;
-    // height: 110px;
+    width: 185px !important;
+    height: 145px;
     background-color: #ccc;
     color: $dark-blue;
     display: inline-block;

@@ -1,153 +1,93 @@
 <template>
-  <div class="container">
 	  <div class="row">
 		   <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
-            <div class="MultiCarousel-inner">
+            <div class="MultiCarousel-inner short-menu">
                 <div class="item">
                     <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
+                      <img src="../../assets/img/ico/XMLID_312_.svg" alt="">
+                      <p>Animais e plantas</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
+                      <img src="../../assets/img/ico/artesanato.svg" alt="">
+                      <p>Artesanato</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
+                      <img src="../../assets/img/ico/auto.svg" alt="">
+                      <p>Automóveis, Veículos e Serviços</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
+                      <img src="../../assets/img/ico/bebidas_alimentos.svg" alt="">
+                      <p>Bebidas e Alimentos</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
+                      <img src="../../assets/img/ico/bebidas_alimentos.svg" alt="">
+                      <p>Bebidas e Alimentos</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
+                      <img src="../../assets/img/ico/casa_decoração.svg" alt="">
+                      <p>Casa e Decoração</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
+                      <img src="../../assets/img/ico/Comunicacao_publicidade.svg" alt="">
+                      <p>Comunicação e Publicidade</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="pad15">
-                        <p class="lead">Multi Item Carousel</p>
-                        <p>₹ 1</p>
-                        <p>₹ 6000</p>
-                        <p>50% off</p>
+                      <img src="../../assets/img/ico/construcao_reformas.svg" alt="">
+                      <p>Construção, Reforma e Serviços</p>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary leftLst"><</button>
-            <button class="btn btn-primary rightLst">></button>
+            <button class="leftLst">
+              <div class="left-arrow"></div>
+            </button>
+            <button class="rightLst">
+              <div class="right-arrow"></div>
+            </button>
         </div>
   	</div>
-  </div>
 </template>
 <style lang="scss" scoped>
-  .MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
-  .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+  .MultiCarousel { float: left; overflow: hidden; margin: 15px; width: 100%; position:relative; left: 0; right: 0; top: 0; bottom: 0;}
+  .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; padding: 0 50px ;margin: 0 auto;}
   .MultiCarousel .MultiCarousel-inner .item { float: left;}
-  .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
-  .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
-  .MultiCarousel .leftLst { left:0; }
-  .MultiCarousel .rightLst { right:0; }
+  /* .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;} */
+  .MultiCarousel .leftLst, .MultiCarousel .rightLst {
+    position:absolute;
+    /* top:calc(50% - 20px); */
+    height: 100%;
+    width: 50px;
+    background: white;
+    border: 0;
+    padding: 0;
+  }
+  .MultiCarousel .leftLst {
+    left: 0;
+    div {
+      margin-left: 15px;
+    }
+  }
+  .MultiCarousel .rightLst {
+    right: 0;
+    div {
+      margin-right: 15px;
+    }
+  }
 
-  .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+  .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none;}
 </style>
 <script type="text/javascript">
   export default {

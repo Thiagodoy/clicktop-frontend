@@ -63,10 +63,10 @@
       </a>
     </div>
 
-    <carousel-multi></carousel-multi>
 
-    <div class="container md margin-t15">
-      <ul class="short-menu">
+    <div class="container lg margin-t15">
+      <carousel-multi></carousel-multi>
+      <!-- <ul class="short-menu">
         <li>
           <img src="../../assets/img/ico/XMLID_312_.svg" alt="">
           <p>Animais e plantas</p>
@@ -99,7 +99,7 @@
           <img src="../../assets/img/ico/construcao_reformas.svg" alt="">
           <p>Construção, Reforma e Serviços</p>
         </li>
-      </ul>
+      </ul> -->
     </div>
 
     <!-- <div class="container lg margin-t30">
@@ -208,6 +208,14 @@
     </div>
 
     <div class="container lg">
+      <div class="timeline-box">
+        <gallery></gallery>
+        
+      </div>
+
+    </div>
+
+    <div class="container lg">
       <h1>Empresas em destaque</h1>
       <div class="company-box">
         <div class="line justify-content-between">
@@ -307,6 +315,7 @@
 </template>
 <script>
 import CarouselMulti from '../../components/carousel-multi/carousel-multi.vue';
+import Gallery from '../../components/gallery/gallery.vue';
 export default {
   data() {
     return {
@@ -315,6 +324,7 @@ export default {
   },
   components: {
       'carousel-multi':CarouselMulti,
+      'gallery': Gallery
   },
 
 }

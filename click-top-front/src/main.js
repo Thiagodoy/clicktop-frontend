@@ -15,13 +15,11 @@ import 'jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-// import 'mdbootstrap'
 import './styles/global/index.scss'
 
 Vue.config.productionTip = false
 
 Vue.use(BootstrapVue);
-
 
 Vue.use(VueSession);
 Vue.use(VueTheMask);
@@ -30,6 +28,7 @@ Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead);
 
 global.jQuery = require('jquery');
 var $ = global.jQuery;
+var jQuery = global.jQuery;
 window.$ = $;
 window.jQuery = jQuery;
 

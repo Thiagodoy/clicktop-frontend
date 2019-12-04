@@ -88,6 +88,31 @@
   }
 }
 
+.right-arrow {
+  width: 20px;
+  height: 40px;
+  transform: matrix(0, 1, -1, 0, 0, 0);
+  background: #CBCBCB 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.left-arrow {
+  width: 20px;
+  height: 40px;
+  transform: matrix(0, -1, 1, 0, 0, 0);
+  background: #CBCBCB 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.left-arrow,
+.right-arrow {
+  &:hover,
+  &:active,
+  &:focus {
+    background: #003B6F;
+  }
+}
+
 .company-box {
   .line {
     display: flex;
