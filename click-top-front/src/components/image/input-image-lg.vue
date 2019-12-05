@@ -33,6 +33,15 @@
   img {
     max-width: 803px;
   }
+  @media (max-width: 1100px) {
+    .company-box-img {
+      .inline, label, img {
+        margin: 0 auto 20px;
+        display: block;
+        float: none !important;
+      }
+    }
+  }
 </style>
 <script>
 

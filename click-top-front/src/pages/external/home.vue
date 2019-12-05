@@ -128,7 +128,10 @@
     <section class="content-home">
       <div class="container lg">
         <div class="timeline-box">
-          <div class="line justify-content-between">
+          <!-- <div class="line justify-content-between"> -->
+            <gallery class=""></gallery>
+          <!-- </div> -->
+          <!-- <div class="line justify-content-between">
             <div class="inline">
               <img src="../../assets/img/img1.png" alt="">
             </div>
@@ -198,7 +201,7 @@
             <div class="inline">
               <img src="../../assets/img/img1.png" alt="">
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -207,13 +210,13 @@
       <hr><hr><hr><hr>
     </div>
 
-    <div class="container lg">
+    <!-- <div class="container lg">
       <div class="timeline-box">
         <gallery></gallery>
-        
+
       </div>
 
-    </div>
+    </div> -->
 
     <div class="container lg">
       <h1>Empresas em destaque</h1>

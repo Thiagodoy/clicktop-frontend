@@ -24,6 +24,14 @@
   .close {
     font-size: 2em;
   }
+  @media (max-width: 1100px) {
+    .company-box-img {
+      .inline, label, img {
+        margin: 0 auto 20px;
+        display: block;
+      }
+    }
+  }
 </style>
 <script >
 export default {
@@ -34,7 +42,7 @@ export default {
     }
   },
   methods: {
-    onFileChangeProfile(e) {      
+    onFileChangeProfile(e) {
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length)
       return;
@@ -45,7 +53,7 @@ export default {
       var reader = new FileReader();
 
       reader.onload = (e) => {
-        this.image = e.target.result;        
+        this.image = e.target.result;
         this.$emit('addProfile',{index:this.index, image:this.image});
       };
       reader.readAsDataURL(file);

@@ -38,7 +38,7 @@
                     <option value="4">Ouro</option>
                     <option value="5">Ouro Top</option>
                   </select>
-                  
+
                   <div class="help-block">
                     {{ errors.first('plan') }}
                   </div>
@@ -249,6 +249,19 @@
     height:                             280px;
     /* width:                              100%; */
   }
+
+    @media (max-width: 1100px) {
+      .btn-default.up.float-left {
+        display: none;
+      }
+      .company-box {
+        .line {
+          display: inline-block !important;
+          /* display: -webkit-box;
+          display: -ms-flexbox; */
+        }
+      }
+    }
   /* .upload-btn-wrapper {
     position:                           relative;
     overflow:                           hidden;
@@ -270,5 +283,6 @@
     opacity:                            0;
     height:                             280px;
   } */
+
 </style>
 <script src="./register-company.js"></script>
