@@ -1,0 +1,215 @@
+.modal-city {
+  p, button {
+    color: $dark-blue;
+    font-family: "Roboto-Medium";
+  }
+  .modal-header {
+    border-bottom: 0;
+    p {
+      display: block;
+      width: 100%;
+      margin: 30px 0 0;
+    }
+    img {
+      width: 258px;
+    }
+  }
+  .modal-body {
+    p {
+      font-size: 20px;
+    }
+  }
+  .modal-footer {
+    justify-content: center;
+    border-top: 0;
+    button {
+      margin-bottom: 20px;
+      @include box-shadow(none);
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $dark-blue;
+        color: white;
+      }
+    }
+  }
+  hr {
+    width: 90%;
+    margin: 0 auto 30px;
+    border-bottom: 2px solid $light-grey;
+  }
+  .custom-select {
+    @include border-radius(0);
+    font-family: "Roboto-Medium";
+    font-size: 18px;
+    color: $dark-blue;
+    margin: 0 auto;
+    width: 60%;
+    border: 0;
+    border-bottom: 2px solid $dark-blue;
+    &:hover,
+    &:focus,
+    &:active {
+      @include box-shadow(none);
+    }
+    // .selected {
+    //   color: $grey;
+    // }
+  }
+}
+
+.modal-city button,
+.modal-contact button,
+.modal-dist button {
+  @include border-radius(24px);
+  font-size: 20px;
+  padding: 10px 60px;
+}
+
+.modal-content {
+  @include border-radius(24px);
+  border: 0;
+}
+
+.modal-dist,
+.modal-city,
+.modal-contact {
+  .modal-header, .modal-footer {
+    border: 0;
+  }
+}
+
+.modal-dist {
+  .modal-header {
+    p {
+      text-align: center;
+      display: block;
+      width: 100%;
+      margin-left: 20px;
+    }
+  }
+  .range {
+    width: 90%;
+    margin: 0 auto;
+    input {
+      left: 0;
+      right: 0;
+    }
+  }
+  .range-labels {
+    li {
+      font-family: "Roboto";
+    }
+  }
+  small,
+  .range-labels li,
+  .modal-header p {
+    color: $dark-blue;
+  }
+  .city {
+    margin-top: 52px;
+    .form-control {
+      &.no-border {
+        font-family: "Roboto";
+        margin: 0 auto;
+        width: 200px;
+        background: white;
+        border-bottom: 2px solid $dark-blue;
+      }
+    }
+  }
+  button {
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 10px 40px;
+  }
+}
+
+.modal-contact {
+  .modal-body {
+    padding: 15px 30px;
+    label {
+      font-family: "Roboto";
+      margin-left: 20px;
+    }
+  }
+  .modal-header {
+    p {
+      font-family: "Roboto-Medium";
+      font-size: 24px;
+      color: $dark-blue;
+      text-align: center;
+      width: 100%;
+      margin: 0;
+    }
+    .close {
+      padding: 0 10px 10px;
+      margin: -0.5rem -0.5rem -0.5rem auto;
+    }
+    .img-contact {
+      position: absolute;
+      top: 15px;
+      right: 50px;
+    }
+  }
+  .modal-footer {
+    button {
+      font-family: "Roboto-Medium";
+    }
+  }
+  .modal-header, .modal-footer {
+    border: 0;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 991px) {
+  .modal-city {
+    .modal-header {
+      img {
+        width: 230px;
+      }
+    }
+    .modal-body {
+      p {
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+    }
+    .custom-select {
+      width: 100%;
+      font-size: 14px;
+    }
+    .modal-footer {
+      button {
+        font-size: 14px;
+      }
+    }
+  }
+  .modal-contact {
+    .modal-header {
+      p {
+        font-size: 18px;
+      }
+      img {
+        width: 30px;
+        top: 20px;
+      }
+    }
+    .modal-body {
+      label {
+        font-size: 1em;
+        margin-left: 0;
+      }
+    }
+    .modal-footer {
+      justify-content: center;
+      button {
+        font-size: 18px;
+        padding: 10px 30px;
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

@@ -13,8 +13,9 @@ class AuthenticationService extends Service{
      * @returns {Promise<User>}
      * @memberof AuthenticationService
      */
-    auth(request){        
-        return this.post(request);       
+    auth(request){
+      this._url = '';  
+        return this.post(request);
     }
 
 }

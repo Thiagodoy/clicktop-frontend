@@ -5,18 +5,18 @@ export default class Service {
     constructor(url) {
 
         console.log('base url', `${process.env.VUE_APP_BASE_PATH}${url}`);
-        
+
         this._api = axios.create({
             baseURL: `${process.env.VUE_APP_BASE_PATH}${url}`,
             timeout: 100000,
             headers: { 'Access-Control-Allow-Origin': '*',
-                       'Content-Type': 'application/json; charset=utf-8', 
+                       'Content-Type': 'application/json; charset=utf-8',
                        'Accept': 'application/json'
             },
-            transformRequest: [ (data, header) =>{                                            
-                let token = TokenService.getToken();                
+            transformRequest: [ (data, header) =>{
+                let token = TokenService.getToken();
                 if(token){
-                    header['Authorization'] = `${token}`; 
+                    header['Authorization'] = `${token}`;
                 }
 
                 return JSON.stringify(data);
@@ -104,8 +104,15 @@ export default class Service {
     /**
      * @param  {} request
      */
-    delete(request) {
+    delete(request, query) {
+
+        debugger;
         this.replaceParameters(request);
+
+        if(query){
+            this.createQueryParams(request);
+        }
+        
         return this._api.delete(this._url);
     }
 

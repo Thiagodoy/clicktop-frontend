@@ -29,7 +29,32 @@
             </ul>
           </div>
           <div class="col-3">
-            <img src="../assets/img/logo_clicktop.png" alt="">
+            <img src="../assets/img/logo_clicktop_branco.svg" alt="">
+
+            <div class="social-media">
+              <ul>
+                <li>
+                  <a href="#">
+                    <img src="../assets/img/ico/010-linkedin.svg" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="../assets/img/ico/011-instagram.svg" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="../assets/img/ico/001-facebook.svg" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="../assets/img/ico/008-youtube.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <h5 class="link-tryia">Desenvolvido por <a href="#">Tryía Produtos Digitais</a></h5>

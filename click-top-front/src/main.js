@@ -11,11 +11,16 @@ import router from './routes/routes'
 import store from './store/index'
 import {dictionary} from './validators/index';
 import VueI18n from 'vue-i18n';
+import Croppa from 'vue-croppa';
+// import MultiCarousel from 'multicarousel'
 import 'jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './styles/global/index.scss'
+import 'vue-croppa/dist/vue-croppa.css'
+
+// import './styles/global/_colors.scss'
 
 Vue.config.productionTip = false
 
@@ -23,6 +28,9 @@ Vue.use(BootstrapVue);
 
 Vue.use(VueSession);
 Vue.use(VueTheMask);
+Vue.use(Croppa);
+
+// Vue.use(MultiCarousel);
 
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead);
 

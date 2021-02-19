@@ -6,6 +6,11 @@ import InputImageLg from '../../../components/image/input-image-lg.vue';
 // import {mask} from 'vue-the-mask'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
 import {mapGetters,mapActions} from 'vuex'
+import ServiceCompany from '../../../services/company'
+import Up from '../../../components/image-up/ImageUp.vue'
+import UpCover from '../../../components/image-up/imageCoverUp.vue'
+import UpProduct from '../../../components/image-up/imageProductUp.vue'
+import ImagemPerfil from '../../../components/ImagesUpload/imagePerfilUp.vue'
 
 
 export default {
@@ -14,39 +19,67 @@ export default {
       company: {
         telephones:[],
         city:'',
-        category:'',
         id_city:'',
-        id_category:''
       },
+
+      comp:{
+        telephones:[],
+
+      },
+      plans: undefined,
       products:[],
       cities: [],
       profile:undefined,
       cover:undefined,
+      croppers: []
     }
   },
   mounted() {
+   // this.plans = this.getPlans;
 
   },
   methods: {
+    voltar(){
+      this.$emit("change", "HOME");
+    },
+
+    cancelar(){
+      alert("Nenhuma informação será salva !")
+      this.$emit("change", "HOME");
+    },
+
+
+
+
+    categoria(){
+        console.log("cat")
+    },
+
+
     toList(){
       this.$router.push({name:'list-company'});
     },
     removeCover(){
       this.cover = undefined;
     },
-    setCover(image){
+    setCover(image){      
       this.cover = {image, type:'COVER-COMPANY'};
+      // this.croppers.push(crop);
+      // console.log(this.croppers.length);
     },
 
     removeProfile(){
       this.profile = undefined;
     },
-    setProfile(image){
+    setProfile(image){      
       this.profile = {image:image.image, type:'PROFILE-COMPANY'};
+      // this.croppers.push(crop);
+      // console.log(this.croppers.length);
     },
 
     addImage(){
       this.products.push({});
+      console.log(this.products.length);
     },
     removeProduct(index){
       debugger;
@@ -65,14 +98,15 @@ export default {
           break;
         }
       }
+      // this.croppers.push(crop);
 
     },
     getCityId(){
 
-      let name_city = this.company.city.split('/')[0].trim();
-      let state = this.company.city.split('/')[1].trim();
+     let name_city = this.company.city.split('/')[0].trim();
+     let state = this.company.city.split('/')[1].trim();
 
-      return this.getCities.find(c=> c.name_city == name_city && c.state.initials == state).id;
+     return this.getCities.find(c=> c.name_city == name_city && c.state.initials == state).id;
 
     },
 
@@ -80,8 +114,11 @@ export default {
       return this.getCategory.find(c=> c.name == this.company.category).id;
     },
 
-    saveCompany() {
+    getPlanId(){
+      // return this.getPlans.find(c=> c.name == this.company.category).id;
+    },
 
+    saveCompany() {
       this.errors.clear();
 
 
@@ -107,6 +144,7 @@ export default {
          if(this.cover){
           galery.push(this.cover);
          }
+        
 
          if(galery.length > 0){
            this.company.galery = galery;
@@ -116,19 +154,15 @@ export default {
 
          if(this.company.telephones.length == 0){
            delete this.company.telephones;
-         }
+         }         
 
-         this.company.user = {
-          name:this.company.name,
-          email: this.company.email,
-          password:"clicktop2020"
-         };
-
-         this.company.id_city = `${this.getCityId()}`;
-         this.company.id_category = `${this.getCategoryId()}`;
+        this.company.id_city = `${this.getCityId()}`;
 
          CompanyService.saveCompany(this.company).then(()=>{
            alert("Empresa salva com sucesso!");
+          
+
+
            this.company = {
             telephones:[],
             id_city:'',
@@ -137,17 +171,26 @@ export default {
             category:''
           };
 
+
+
           this.products=[];
           this.profile = undefined;
           this.cover = undefined;
-          this.$refs.profile.removeImageProfile();
-          this.$refs.cover.removeImage();
-          this.$refs.autoCompleteCategory.inputValue = '';
-          this.$refs.autoCompleteCityAndState.inputValue = '';
-         }).catch((e)=>{
+
+          this.$emit("change", "HOME");
+          // this.$refs.profile.removeImageProfile();
+          // this.$refs.cover.removeImage();
+         
+          //Bruno comentado pq esta dando erro verificar se existe a necessidade de exccutar esses comandos abaixo
+          //this.$refs.autoCompleteCategory.inputValue = '';
+         //this.$refs.autoCompleteCityAndState.inputValue = '';
+
+        }).catch((e)=>{
            alert('Erro ao salvar!');
-           console.error(e);
+           console.info(e);
          });
+
+
 
       }).catch(error=>{
         console.error( error);
@@ -155,7 +198,7 @@ export default {
     },
   },
   computed:{
-    ...mapGetters(['getCitiesMappeadWithState','getCities','getCategoryMapped','getCategory']),
+    ...mapGetters(['getCitiesMappeadWithState','getCities','getCategoryMapped','getCategory', 'getPlansMapped', 'getPlans']),
     telephone:{
       set: function(value){
 
@@ -228,6 +271,10 @@ export default {
       'input-image-profile':InputImageProfile,
       'input-image-lg':InputImageLg,
       "auto-complete-city":VueBootstrapTypeahead,
-      "auto-complete-category":VueBootstrapTypeahead
+      "auto-complete-category":VueBootstrapTypeahead,
+      "up": Up,
+      "up-product": UpProduct,
+      "up-cover": UpCover,
+      ImagemPerfil,
   },
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="app" >
-    <app-header></app-header>
+     <app-header></app-header>
     <section class="section">
       <!-- <router-view></router-view> -->
       <!-- <home></home> -->
@@ -50,6 +50,9 @@ export default {
     //Load all categorys
     this.actLoadCategory();
 
+    //Load all plans
+    this.actLoadPlans();
+
 
     // router.push(router);
 
@@ -58,7 +61,7 @@ export default {
 
   },
   methods:{
-    ...mapActions(['actLoadCities','actLoadCategory'])
+    ...mapActions(['actLoadCities','actLoadCategory','actLoadPlans'])
   },
   components: {
       AppHeader, AppFooter, Home, RegisterCompany, RegisterUser, Login

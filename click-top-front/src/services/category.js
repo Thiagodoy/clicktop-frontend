@@ -1,12 +1,13 @@
 import Service from './service';
 
-class CategoryService extends Service{    
+class CategoryService extends Service{
 
     constructor(url){
         super(url);
     }
 
     getCategory(){
+      this._url = '';
         return this._api.get();
     }
 

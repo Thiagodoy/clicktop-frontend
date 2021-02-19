@@ -1,13 +1,16 @@
 class TokenService {
     constructor(){
-        this._token = undefined;        
+      // this._url = ''; 
+        this._token = undefined;
     }
 
     setToken(token){
+      // this._url = ''; 
         this._token = token;
     }
 
     getToken(){
+      // this._url = ''; 
         return this._token;
     }
 

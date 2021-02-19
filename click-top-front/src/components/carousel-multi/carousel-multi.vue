@@ -1,71 +1,143 @@
-<template>
+carouselMulti<template>
 	  <div class="row">
-		   <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
-            <div class="MultiCarousel-inner short-menu">
+		   <div class="carousel-multi" data-items="1" data-slide="1" id="carouselMulti"  data-interval="1000">
+            <div class="carousel-multi-inner short-menu">
                 <div class="item">
                     <div class="pad15">
-                      <img src="../../assets/img/ico/XMLID_312_.svg" alt="">
-                      <p>Animais e plantas</p>
+                      <i class="icon-Group-272"></i>
+                      <p>Alimentos & Bebidas</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                      <img src="../../assets/img/ico/artesanato.svg" alt="">
-                      <p>Artesanato</p>
+                      <i class="icon-contrucao-decoracao"></i>
+                      <p>Construção & Decoração</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                      <img src="../../assets/img/ico/auto.svg" alt="">
-                      <p>Automóveis, Veículos e Serviços</p>
+                      <i class="icon-disk-delivery"></i>
+                      <p>Disk Delivery</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                      <img src="../../assets/img/ico/bebidas_alimentos.svg" alt="">
-                      <p>Bebidas e Alimentos</p>
+                      <i class="icon-educacao-cultura"></i>
+                      <p>Educação & Cultura</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                      <img src="../../assets/img/ico/bebidas_alimentos.svg" alt="">
-                      <p>Bebidas e Alimentos</p>
+                      <i class="icon-esporte-lazer"></i>
+                      <p>Esporte & Lazer</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                      <img src="../../assets/img/ico/casa_decoração.svg" alt="">
-                      <p>Casa e Decoração</p>
+                      <i class="icon-eventos-festas"></i>
+                      <p>Eventos & Festas</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                      <img src="../../assets/img/ico/Comunicacao_publicidade.svg" alt="">
-                      <p>Comunicação e Publicidade</p>
+                      <i class="icon-igrejas"></i>
+                      <p>Igrejas</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                      <img src="../../assets/img/ico/construcao_reformas.svg" alt="">
-                      <p>Construção, Reforma e Serviços</p>
+                      <i class="icon-industria-ferragens"></i>
+                      <p>Indústrias e Ferragens</p>
+                    </div>
+                </div>
+								<div class="item">
+                    <div class="pad15">
+                      <i class="icon-informatica-escritorio"></i>
+                      <p>Informática & Escritório</p>
+                    </div>
+                </div>
+								<div class="item">
+                    <div class="pad15">
+                      <i class="icon-midia-publicidade"></i>
+                      <p>Mídia & Publicidade</p>
+                    </div>
+                </div>
+								<div class="item">
+                    <div class="pad15">
+                      <i class="icon-moda-estilo"></i>
+                      <p>Moda & Estilo</p>
+                    </div>
+                </div>
+								<div class="item">
+                    <div class="pad15">
+                      <i class="icon-moveis_eletro"></i>
+                      <p>Móveis & Eletro</p>
+                    </div>
+                </div>
+								<div class="item">
+                    <div class="pad15">
+                      <i class="icon-saude-bemestar"></i>
+                      <p>Saúde & Bem Estar</p>
+                    </div>
+                </div>
+								<div class="item">
+                    <div class="pad15">
+                      <i class="icon-servicos_profissionais"></i>
+                      <p>Serviços & Profissionais</p>
+                    </div>
+                </div>
+								<div class="item">
+                    <div class="pad15">
+                      <i class="icon-Address"></i>
+                      <p>Turismo & Hotéis</p>
+                    </div>
+                </div>
+								<div class="item">
+                    <div class="pad15">
+                      <i class="icon-variedades"></i>
+                      <p>Variedades</p>
+                    </div>
+                </div>
+								<div class="item">
+                    <div class="pad15">
+                      <i class="icon-veiculos"></i>
+                      <p>Veículos</p>
                     </div>
                 </div>
             </div>
             <button class="leftLst">
-              <div class="left-arrow"></div>
+              <!-- <div class="left-arrow"></div> -->
+							<i class="icon-Component-4--2" aria-hidden="true"></i>
             </button>
             <button class="rightLst">
-              <div class="right-arrow"></div>
+              <!-- <div class="right-arrow"></div> -->
+							<i class="icon-Component-4--1" aria-hidden="true"></i>
             </button>
         </div>
   	</div>
 </template>
 <style lang="scss" scoped>
-  .MultiCarousel { float: left; overflow: hidden; margin: 15px; width: 100%; position:relative; left: 0; right: 0; top: 0; bottom: 0;}
-  .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; padding: 0 50px ;margin: 0 auto;}
-  .MultiCarousel .MultiCarousel-inner .item { float: left;}
-  /* .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;} */
-  .MultiCarousel .leftLst, .MultiCarousel .rightLst {
+	@import "../../styles/global/_colors.scss";
+  .carousel-multi { float: left; overflow: hidden; margin: 15px; width: 100%; position:relative; left: 0; right: 0; top: 0; bottom: 0;}
+  .carousel-multi .carousel-multi-inner { transition: 1s ease all; padding: 0 50px ;margin: 0 auto;}
+  .carousel-multi .carousel-multi-inner .item { float: left;}
+	.carousel-multi .carousel-multi-inner .item p { font-family: 'Roboto';}
+  /* .carousel-multi .carousel-multi-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;} */
+	.carousel-multi .carousel-multi-inner .item {
+		cursor:pointer;
+		&:hover {
+			i:before {
+				color: white;
+			}
+			&.a {
+				fill: white;
+			}
+		}
+		i {
+			font-size: 3em;
+		}
+	}
+  .carousel-multi .leftLst, .carousel-multi .rightLst {
     position:absolute;
     /* top:calc(50% - 20px); */
     height: 100%;
@@ -73,21 +145,65 @@
     background: white;
     border: 0;
     padding: 0;
+		i {
+	    color: $light-grey;
+	    font-size: 2em;
+	    &:before {
+	      color: $light-grey;
+	    }
+			&:focus,
+		  &:hover,
+		  &:active,
+		  &.active {
+		    i:before {
+		      color: $dark-blue;
+		    }
+		  }
+	  }
   }
-  .MultiCarousel .leftLst {
+  .carousel-multi .leftLst {
     left: 0;
     div {
       margin-left: 15px;
     }
   }
-  .MultiCarousel .rightLst {
+  .carousel-multi .rightLst {
     right: 0;
     div {
+			float: right;
       margin-right: 15px;
     }
   }
 
-  .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none;}
+  .carousel-multi .leftLst.over, .carousel-multi .rightLst.over { pointer-events: none;}
+
+	@media screen and (min-width: 320px) and (max-width: 991px) {
+		.carousel-multi .carousel-multi-inner .item {
+			i {
+				font-size: 1em;
+			}
+		}
+		.carousel-multi .leftLst, .carousel-multi .rightLst {
+			width: 20px;
+			i {
+				font-size: 1.3em;
+				vertical-align: middle;
+			}
+		}
+		.carousel-multi .rightLst {
+			right: -5px;
+		}
+		.carousel-multi .leftLst {
+			left: -5px;
+		}
+		.carousel-multi .carousel-multi-inner {
+			padding: 0 20px;
+		}
+	}
+
+	@media screen and (min-width: 1200px) and (max-width: 1750px) {
+
+	}
 </style>
 <script type="text/javascript">
   export default {
@@ -97,8 +213,8 @@
       }
     },
     mounted() {
-      var itemsMainDiv = ('.MultiCarousel');
-      var itemsDiv = ('.MultiCarousel-inner');
+      var itemsMainDiv = ('.carousel-multi');
+      var itemsDiv = ('.carousel-multi-inner');
       var itemWidth = "";
 
       $('.leftLst, .rightLst').click(function () {
@@ -109,17 +225,17 @@
               click(1, this)
       });
 
-      ResCarouselSize();
+      ResCarouselSize1();
 
 
 
 
       $(window).resize(function () {
-          ResCarouselSize();
+          ResCarouselSize1();
       });
 
       //this function define the size of the items
-      function ResCarouselSize() {
+      function ResCarouselSize1() {
           var incno = 0;
           var dataItems = ("data-items");
           var itemClass = ('.item');
@@ -133,26 +249,30 @@
               var itemNumbers = $(this).find(itemClass).length;
               btnParentSb = $(this).parent().attr(dataItems);
               itemsSplit = btnParentSb.split(',');
-              $(this).parent().attr("id", "MultiCarousel" + id);
+              $(this).parent().attr("id", "carouselMulti" + id);
 
 
               if (bodyWidth >= 1200) {
-                  incno = itemsSplit[3];
-                  itemWidth = sampwidth / incno;
+                  // incno = itemsSplit[0];
+                  // itemWidth = sampwidth / incno;
+									itemWidth = 170;
               }
               else if (bodyWidth >= 992) {
-                  incno = itemsSplit[2];
-                  itemWidth = sampwidth / incno;
+                  // incno = itemsSplit[0];
+                  // itemWidth = sampwidth / incno;
+									itemWidth = 150;
               }
               else if (bodyWidth >= 768) {
-                  incno = itemsSplit[1];
-                  itemWidth = sampwidth / incno;
+                  // incno = itemsSplit[0];
+                  // itemWidth = sampwidth / incno;
+									itemWidth = 100;
               }
               else {
-                  incno = itemsSplit[0];
-                  itemWidth = sampwidth / incno;
+                  // incno = itemsSplit[10];
+                  // itemWidth = sampwidth / incno;
+									itemWidth = 100;
               }
-              $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+              $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers});
               $(this).find(itemClass).each(function () {
                   $(this).outerWidth(itemWidth);
               });
@@ -165,7 +285,7 @@
 
 
       //this function used to move the items
-      function ResCarousel(e, el, s) {
+      function ResCarousel1(e, el, s) {
           var leftBtn = ('.leftLst');
           var rightBtn = ('.rightLst');
           var translateXval = '';
@@ -176,7 +296,7 @@
               translateXval = parseInt(xds) - parseInt(itemWidth * s);
               $(el + ' ' + rightBtn).removeClass("over");
 
-              if (translateXval <= itemWidth / 2) {
+              if (translateXval <= itemWidth / 4) {
                   translateXval = 0;
                   $(el + ' ' + leftBtn).addClass("over");
               }
@@ -186,7 +306,7 @@
               translateXval = parseInt(xds) + parseInt(itemWidth * s);
               $(el + ' ' + leftBtn).removeClass("over");
 
-              if (translateXval >= itemsCondition - itemWidth / 2) {
+              if (translateXval >= itemsCondition - itemWidth / 4) {
                   translateXval = itemsCondition;
                   $(el + ' ' + rightBtn).addClass("over");
               }
@@ -198,7 +318,7 @@
       function click(ell, ee) {
           var Parent = "#" + $(ee).parent().attr("id");
           var slide = $(Parent).attr("data-slide");
-          ResCarousel(ell, Parent, slide);
+          ResCarousel1(ell, Parent, slide);
       }
     },
 

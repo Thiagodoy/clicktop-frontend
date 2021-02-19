@@ -12,7 +12,7 @@ class GoogleService extends Service {
      * @memberof GoogleService
      */
     getLocation(request) {
-
+        this._url = '';
         request = this.putKey(request);
         return this.get(request, true).then(response=>{
 
@@ -25,6 +25,7 @@ class GoogleService extends Service {
     }
 
     putKey(request){
+      this._url = '';
         request.key = process.env.API_SERVICE_GOOGLE_KEY;
         return request;
     }

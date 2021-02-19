@@ -34,7 +34,7 @@ const userStore = {
                commit(MAIN_LOGIN, response);               
                instance.$session.set('user', response);
                TokenService.setToken(response.token);
-               return Promise.resolve(true);               
+               return Promise.resolve({user:response,logado:true});               
             }).catch((error)=>{
                 return Promise.resolve(false)
             });

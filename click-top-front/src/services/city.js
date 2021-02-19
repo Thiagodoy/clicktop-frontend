@@ -12,6 +12,7 @@ class CityService extends Service {
      * @memberof UtilsService
      */
      getCities(){
+       this._url = '';
        return this.get();
      }
 

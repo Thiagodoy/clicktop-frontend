@@ -1,14 +1,14 @@
 <template>
   <div>
     <h1 class="up text-center title">cadastrar nova empresa</h1>
-    <div class="container">
+    <div class="container" style="padding: 30px 0 100px 0">
       <form class="" action="index.html" method="post">
         <div class="row">
           <div class="col">
             <div class="row">
               <div class="col-4">
                 <div class="form-group">
-                  <label for="">Nome da empresa (Nome Fantasia)</label>
+                  <label class="font-label"  for="">Nome da empresa (Nome Fantasia)</label>
                   <input class="form-control" type="text" id="company-name" name="company-name" value="" v-model="company.name" v-validate="'required'">
                   <div class="help-block">
                     {{ errors.first('company-name') }}
@@ -17,26 +17,31 @@
               </div>
               <div class="col-4">
                 <div class="form-group">
-                  <label for="">Categoria</label>
-                  <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
+                  <label class="font-label"  for="">Categoria</label>
 
-                  <auto-complete-category ref="autoCompleteCategory" id="category" name="category" :data="getCategoryMapped" v-model="company.category" v-validate="'required'"></auto-complete-category>
+                  <!--
+                  <auto-complete-category ref="autoCompleteCategory" id="category" name="category" :data="getCategory" v-model="comp.category" v-validate="'required'"></auto-complete-category>
                   <div class="help-block">
                     {{ errors.first('category') }}
-                  </div>
+                  </div> -->
+                   <select v-model="company.id_category" name="category" id="plan"  class="form-control">
+                     <option :value="item.id" v-for="(item,i) in getCategory" :key="i">
+                       {{item.name}}
+                     </option>
 
+                   </select>
+                   <div class="help-block">
+                    {{ errors.first('category') }}
+                  </div>
                 </div>
               </div>
               <div class="col-4">
                 <div class="form-group">
-                  <label for="">Plano</label>
-                  <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
-                  <select name="plan" id="plan" v-model="company.plan" class="form-control">
-                    <option value="1">Grátis</option>
-                    <option value="2">Prata</option>
-                    <option value="3">Prata Top</option>
-                    <option value="4">Ouro</option>
-                    <option value="5">Ouro Top</option>
+                  <label class="font-label"  for="">Plano</label>
+
+                  <select name="plan" id="plan" v-model="company.id_plan" class="form-control">
+                    <option :value="item.id" v-for="(item,i) in getPlans" :key="i" >{{item.name}}</option>
+
                   </select>
 
                   <div class="help-block">
@@ -50,19 +55,19 @@
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                  <label for="">Telefone Fixo</label>
+                  <label class="font-label"  for="">Telefone Fixo</label>
                   <input class="form-control" type="text" id="telephone" name="telephone" v-model="telephone" v-mask="'(##) ####-####'">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
-                  <label for="">Telefone Comercial</label>
+                  <label class="font-label"  for="">Telefone Comercial</label>
                   <input class="form-control" type="text" id="telephone-comercial" name="telephone-comercial"  v-model="telephoneCommercial" v-mask="'(##) ####-####'">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
-                  <label for="">Telefone Celular (WhatsApp)</label>
+                  <label class="font-label"  for="">Telefone Celular (WhatsApp)</label>
                   <input class="form-control" type="text" id="cell-phone" name="cell-phone"  v-model="cellPhoneWhat" v-mask="'(##) #####-####'">
                 </div>
               </div>
@@ -71,7 +76,7 @@
             <div class="row">
               <div class="col">
                   <div class="form-group">
-                      <label for="">Endereço da empresa</label>
+                      <label class="font-label"  for="">Endereço da empresa</label>
                       <input class="form-control" type="text" id="address" name="address" value="" v-model="company.address" v-validate="'required'">
                       <div class="help-block">
                         {{ errors.first('address') }}
@@ -80,7 +85,7 @@
               </div>
               <div class="col-4">
                 <div class="form-group">
-                    <label for="">Bairro</label>
+                    <label class="font-label"  for="">Bairro</label>
                     <input class="form-control" type="text" id="neighborhood" name="neighborhood" value="" v-model="company.address_neighborhood" v-validate="'required'">
                     <div class="help-block">
                       {{ errors.first('neighborhood') }}
@@ -93,7 +98,7 @@
             <div class="row">
               <div class="col-2">
                 <div class="form-group">
-                  <label for="">Número</label>
+                  <label class="font-label"  for="">Número</label>
                   <input class="form-control" type="text" v-mask="'######'" id="address-number" name="address-number" value="" v-model="company.address_number" v-validate="'required'">
                   <div class="help-block">
                     {{ errors.first('address-number') }}
@@ -103,7 +108,7 @@
 
               <div class="col-3">
                 <div class="form-group">
-                  <label for="">Complemento</label>
+                  <label class="font-label"  for="">Complemento</label>
                   <input class="form-control" type="text" name="address-complement" value="" v-model="company.address_complement">
                 </div>
               </div>
@@ -120,10 +125,16 @@
 
               <div class="col-4">
                 <div class="form-group">
-                  <label for="">Cidade/Estado</label>
+                  <label class="font-label"  for="">Cidade/Estado</label>
                   <!-- <input class="form-control" type="text" name="" value="" v-model="company.city"> -->
 
-                  <auto-complete-city id="city-state" ref="autoCompleteCityAndState" name="city-state" :data="getCitiesMappeadWithState" v-model="company.city" v-validate="'required'"></auto-complete-city>
+                 <auto-complete-city id="city-state" ref="autoCompleteCityAndState" name="city-state" :data="getCitiesMappeadWithState" v-model="company.city" v-validate="'required'"></auto-complete-city>
+                  <!-- <select v-model="company.id_city"  class="form-control" >
+                    <option :value="item.id" v-for="(item,i) in getCities" :key="i">{{item.name_city}}/{{item.state.name_state}}</option>
+
+                  </select>  -->
+
+
                   <div class="help-block">
                     {{ errors.first('city-state') }}
                   </div>
@@ -133,7 +144,7 @@
             </div>
 
             <div class="form-group">
-              <label for="">Missão/Visão/Valores - Resumo da empresa</label>
+              <label class="font-label"  for="">Missão/Visão/Valores - Resumo da empresa</label>
               <small class="float-right">{{`Máximo de ${400 - (company.description)? company.description.length : 0} caractéres`}}</small>
               <textarea class="form-control" id="description" name="description" v-validate="'max:400'" rows="3" cols="80" v-model="company.description"></textarea>
                <div class="help-block">
@@ -144,7 +155,7 @@
             <div class="row">
               <div class="col-3">
                 <div class="form-group">
-                  <label for="">Horário de funcionamento</label>
+                  <label class="font-label"  for="">Horário de funcionamento</label>
                   <input class="form-control" type="text" v-mask="'##:##'" id="opening-hours" name="opening-hours" value="" v-model="company.opening_hours">
                 </div>
               </div>
@@ -156,7 +167,7 @@
               </div>
               <div class="col-6">
                 <div class="form-group">
-                  <label for="">Contato</label>
+                  <label  class="font-label"  for="">Contato</label>
                   <input class="form-control" type="text" id="email" name="email" value="" v-model="company.email" v-validate="'required'">
                   <div class="help-block">
                     {{ errors.first('email') }}
@@ -166,68 +177,104 @@
             </div>
 
             <div class="form-group">
-              <label for="">Palavras Chave (Lembre-se de separar as palavras com vírgula)</label>
+              <label class="font-label"  for="">Palavras Chave (Lembre-se de separar as palavras com vírgula)</label>
               <input class="form-control" type="text" id="keys" name="keys" value="" v-model="company.keys">
             </div>
 
             <div class="form-group">
-              <label for="">Produtos principais</label>
+              <label class="font-label"  for="">Produtos principais</label>
               <textarea class="form-control" id="main-products" name="main-products" rows="3" cols="80" v-model="company.main_products"></textarea>
             </div>
 
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                  <label for="">Website (Cole aqui a url)</label>
+                  <label class="font-label"  for="">Website (Cole aqui a url)</label>
                   <input class="form-control" type="text" id="website" name="website" value="" v-model="company.website">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
-                  <label for="">Facebook (Cole aqui a url)</label>
+                  <label class="font-label"  for="">Facebook (Cole aqui a url)</label>
                   <input class="form-control" type="text" id="facebook" name="facebook" value="" v-model="company.facebook">
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
-                  <label for="">Instagram (Cole aqui a url)</label>
+                  <label class="font-label"  for="">Instagram (Cole aqui a url)</label>
                   <input class="form-control" type="text" id="instagran" name="instagran" value="" v-model="company.instagran">
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- <div class="row">
+          <div class="col-md-4">
+
+
+
+            <up/>
+
+
+
+          </div>
+
+        </div> -->
+
+
 
 
           <div class="company-box-img margin-b20">
-                <input-image-profile ref="profile" @addProfile="setProfile" @removeProfile="removeProfile"></input-image-profile>
-                <input-image-lg ref="cover" @addCapa="setCover" @removeCapa="removeCover" class="float-right"></input-image-lg>
+            <up class="inline" ref="profile" @addProfile="setProfile" @removeProfile="removeProfile"/>
+            <up-cover ref="cover" @addCapa="setCover" @removeCapa="removeCover" class="float-right"></up-cover>
+            <!-- <input-image-profile class="inline" ref="profile" @addProfile="setProfile" @removeProfile="removeProfile"></input-image-profile> -->
+
+            <!-- <input-image-lg ref="cover" @addCapa="setCover" @removeCapa="removeCover" class="float-right"></input-image-lg> -->
           </div>
 
 
 
           <div class="product-box-img">
             <template v-for="(v,i) in products">
-                <input-image-product :key="i" :index="i" @addProduct="addProduct" @removeProduct="removeProduct"></input-image-product>
+              <up-product class="inline margin-r20" :key="i" :index="i" @addProduct="addProduct"></up-product>
+                <!-- <input-image-product :key="i" :index="i" @addProduct="addProduct" @removeProduct="removeProduct"></input-image-product> -->
             </template>
-            <button class="btn-circle" @click="addImage()" type="button" name="button">+</button>
+            <button class="btn-circle" :class="{'margin-t7': (this.products.length > 0)}" @click="addImage()" type="button" name="button">+</button>
+
+          </div>
+
+          <div class="form-group margin-t30">
+            <label class="font-label"  for="">Observações gerais</label>
+            <textarea class="form-control" id="obs" v-model="company.observation" name="obs" rows="5" cols="80"></textarea>
           </div>
 
 
 
-
-        <div class="text-right margin-20">
-          <button class="btn-default up float-left" type="button" name="button" @click="toList()">listar</button>
-          <button class="btn-default up" type="button" name="button">cancelar</button>
+        <div class="btn-box margin-20 mt-5">
+          <button class="btn-default up float-left" type="button" name="button" @click="voltar" >Voltar</button>
+          <button @click="cancelar" class="btn-default up" type="button" name="button">cancelar</button>
           <button class="btn-primary up" @click="saveCompany()" id="btn-company-save" type="button" name="button">salvar</button>
         </div>
       </form>
     </div>
   </div>
 </template>
+
+
+
+
 <style scoped lang="scss">
+
+  .font-label{
+    font-family: 'Roboto-Medium';
+    color:#707070;
+    font-size:18px;
+
+}
+
   .btn-circle {
     margin: 0 20px;
+    vertical-align: top;
   }
 
   .btn-default {
@@ -235,7 +282,7 @@
   }
 
   .btn-default, .btn-primary {
-    font-size: 36px;
+    /* font-size: 36px; */
   }
 
   .help-block {
@@ -251,9 +298,9 @@
   }
 
     @media (max-width: 1100px) {
-      .btn-default.up.float-left {
+      /* .btn-default.up.float-left {
         display: none;
-      }
+      } */
       .company-box {
         .line {
           display: inline-block !important;
@@ -285,4 +332,4 @@
   } */
 
 </style>
-<script src="./register-company.js"></script>
+ <script src="./register-company.js"></script>  -->

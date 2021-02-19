@@ -13,21 +13,31 @@ class CompanyService extends Service {
      * @memberof CompanyService
      */
      saveCompany(request){
+       this._url = '';
        return this.post(request).then(resp =>{return resp;});
      }
 
+     editCompany(request){
+       this._url = '';
+       return this.put(request).then(resp =>{return resp;});
+     }
+
      listCompany(request){
-       console.log(request, ' request company');
+       this._url = '';
        return this.get(request, true);
        // return this.post(request).then(resp =>{return resp;});
      }
 
-     deleteCompany(request) {
-       return this.delete(request).then(resp =>{return resp;});
-     }
-
+     /**
+     * @param  {} request
+     */
+    delete(request) {
+      this._url = '';
+      this.createQueryParams(request);
+      return this._api.delete(this._url);
+  }
 
 }
 
-const instance = new CompanyService(process.env.VUE_APP_API_SERVICE_COMPANY);
-export default instance;
+
+export default  new CompanyService(process.env.VUE_APP_API_SERVICE_COMPANY);
